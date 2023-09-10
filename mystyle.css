@@ -37,6 +37,14 @@ h4 {
     margin: auto;
     font-weight: normal;
 }
+
+h6 {
+    padding-top: 7pt;
+    text-align: center;
+    font-size: 10px;
+    margin: auto;
+    font-weight: normal;
+}
   
 .topnav {
     background-color: black;
@@ -45,10 +53,15 @@ h4 {
   
 .topnav a {
     float: left;
-    color: white;
+    color:whitesmoke;
     text-align: center;
-    padding: 16px 19px;
+    text-decoration: none;
+    padding: 16px 18px;
     font-size: 16.5px;
+}
+
+.topnav a:hover {
+    color:rgb(51, 157, 192);
 }
   
 .column {
@@ -75,7 +88,15 @@ h4 {
 }
 
 table, th, td {
-    border:1px solid black;
+    /*border:1px solid black;*/
+    padding-top: 5pt;
+    padding-bottom: 5pt;
+    padding-right: 4pt;
+    padding-left: 2pt;
+}
+
+th {
+    background-color: rgb(51, 157, 192);
 }
   
 h3 {
@@ -93,7 +114,16 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
 
+.centered {
+    position: absolute;
+    text-align: center;
+    top: 52.5%;
+    left: 56.5%;
+    color: whitesmoke;
+    font-size: 25pt;
+    text-shadow: 2pt;
 }
   
 footer {
