@@ -213,3 +213,8 @@ form.search::after {
     left: 50%;
     margin-bottom: 10px;
 }
+
+.checkoutButton {
+    float:right;
+    margin-right: 5pt;
+}
