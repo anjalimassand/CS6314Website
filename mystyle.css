@@ -123,7 +123,6 @@ p {
     left: 56.5%;
     color: whitesmoke;
     font-size: 25pt;
-    text-shadow: 2pt;
 }
   
 footer {
@@ -192,17 +191,14 @@ form.search::after {
     padding: 2px 16px;
 }
 
-/* Float four columns side by side */
 .columnCard {
     float: left;
     width: 30%;
     padding: 0 10px;
 }
   
-  /* Remove extra left and right margins, due to padding */
 .rowCard {margin: 0 -5px;}
   
-  /* Clear floats after the columns */
 .rowCard:after {
     content: "";
     display: table;
@@ -215,6 +211,66 @@ form.search::after {
 }
 
 .checkoutButton {
+    background-color: rgb(51, 157, 192); 
+    width: 50%;
+    color: whitesmoke; 
+    padding: 10px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 13pt;
+    margin-right: 7pt;
     float:right;
-    margin-right: 5pt;
+    border: 1px solid grey;
 }
+
+.checkoutButton:hover { 
+    background: rgb(82, 57, 172);
+}
+
+/* my account */
+
+.h4Account {
+    visibility: hidden;
+}
+
+
+.loginButton { 
+    background-color: rgb(51, 157, 192); 
+    width: 100%;
+    color: whitesmoke; 
+    padding: 15px; 
+    margin: 10px 0px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 13pt;
+    border: 1px solid grey;
+} 
+
+form.login [type=text], input[type=password] { 
+     width: 100%; 
+     margin: 8px 0;
+     padding: 12px 20px; 
+     display: inline-block; 
+     border: 1px solid grey; 
+     box-sizing: border-box; 
+}
+ 
+.loginButton:hover { 
+    background: rgb(82, 57, 172);
+ }
+ 
+.cancelbtn { 
+     width: auto; 
+     padding: 10px 18px;
+     margin: 10px 5px;
+ } 
+   
+
+.containerLogin { 
+     padding: 25px; 
+     background-color: rgb(222, 221, 226);
+     margin-top: 50px;
+     margin-left: 300px;
+     margin-right: 300px;
+     border-radius: 10px;
+ }
