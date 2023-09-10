@@ -1,6 +1,6 @@
 html {
     background-color:darkgrey;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 header {
     display: block;
@@ -86,6 +86,7 @@ h3 {
 p {
     text-align: center;
     font-size: 13pt;
+    font-weight: 100;
 }
 
 .center {
@@ -99,4 +100,86 @@ footer {
     display: block;
     background-color: lightblue;
     block-size: 70pt;
+}
+
+/* Search bar */
+
+* {
+    box-sizing: border-box;
+}
+
+.search {
+    margin-top: 30px;
+    margin-right: 87px;
+    margin-left: 87px;
+}
+
+form.search input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 80%;
+    background: #f1f1f1;
+}
+
+form.search button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: rgb(51, 157, 192);
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    
+}
+  
+form.search button:hover {
+    background: rgb(82, 57, 172);
+}
+  
+form.search::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Card */
+
+.card {
+    transition: 0.3s;
+    margin-left: 85px;
+    margin-top: 60px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 80%;
+}
+  
+.container {
+    padding: 2px 16px;
+}
+
+/* Float four columns side by side */
+.columnCard {
+    float: left;
+    width: 30%;
+    padding: 0 10px;
+}
+  
+  /* Remove extra left and right margins, due to padding */
+.rowCard {margin: 0 -5px;}
+  
+  /* Clear floats after the columns */
+.rowCard:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.center {
+    left: 50%;
+    margin-bottom: 10px;
 }
