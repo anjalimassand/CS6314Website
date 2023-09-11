@@ -14,7 +14,7 @@ header {
     width: 100px;
     height: 100px;
     background-image: "groceries.jpeg";
-    background-repeat: space;
+    background-repeat: no-repeat;
 }
   
 .top h1 {
@@ -60,8 +60,16 @@ h6 {
     font-size: 16.5px;
 }
 
+.topnav a:link {
+    color: white;
+}
+
 .topnav a:hover {
     color:rgb(51, 157, 192);
+}
+
+.topnav a:active {
+    color: rgb(51, 157, 192);
 }
   
 .column {
@@ -102,6 +110,8 @@ th {
 h3 {
     text-align: center;
     font-size: 16pt;
+    text-shadow: 2px 2px #fffbfb;
+      
 }
 
 p {
@@ -221,6 +231,7 @@ form.search::after {
     margin-right: 7pt;
     float:right;
     border: 1px solid grey;
+    vertical-align: auto;
 }
 
 .checkoutButton:hover { 
@@ -257,7 +268,11 @@ form.login [type=text], input[type=password] {
  
 .loginButton:hover { 
     background: rgb(82, 57, 172);
- }
+}
+
+.loginButton:visited { 
+    background: rgb(103, 85, 168);
+}
  
 .cancelbtn { 
     width: auto; 
@@ -292,3 +307,22 @@ form.login [type=text], input[type=password] {
     margin-top:15px;
     margin-left:95px;
 }
+
+/* Contact us */
+
+.list {
+    text-align: center;
+}
+
+dt {
+    font-size: 15pt;
+    padding-bottom: 15pt;
+    margin-top: 14pt;
+}
+
+dd {
+    font-size: 12 pt;
+    padding-bottom: 5pt;
+    margin-right: 25px;
+}
+
