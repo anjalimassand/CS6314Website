@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <script src="contactus.js"></script>
     <title>Shopper's Stop: Contact Us</title>
     <title>Contact Us</title>
     <header>
@@ -73,23 +74,37 @@
         <div class="column2" style="background-color:aliceblue">
             <div>
                 <h3>Contact Us</h3>
-                <form class="login">
-                    <div class="containerLogin"> 
-                        <dl class="list">
-                            <dt>Austin, TX</dt>
-                            <dd>512-764-3432</dd>
-                            <dd>shoppersstopaustin@gmail.com</dd>
-                            <dt>Dallas, TX</dt>
-                            <dd>469-455-6964</dd>
-                            <dd>shoppersstopdallas@gmail.com</dd>
-                            <dt>Houston, TX</dt>
-                            <dd>713-774-9099</dd>
-                            <dd>shoppersstophouston@gmail.com</dd>
-                        </dl>
-                    </div>
-                </form>
-            </div>
-            
+                    <form name="commentForm" class="login">
+                        <div class="containerLogin">
+                            <dl class="list">
+                                <dt><label>First Name:</label></dt>
+                                <dd><input type="text" name="first" id="first" style="padding: 4pt" required/></dd>
+                                <dt><label>Last Name: </label></dt>
+                                <dd><input type="text" name="last" id="last" style="padding: 4pt" required/></dd>
+                                <dt><label>Phone Number: </label></dt>
+                                <dd><input type="text" name="number" placeholder="(012) 345-6789" id="number" style="padding: 4pt" required/></dd>
+                                <dt><label>Email Address: </label></dt>
+                                <dd><input type="text" name="email" id="email" style="padding: 4pt" required/></dd>
+                                <dt><label>Gender: </label></dt>
+                                <dd><input type="radio" name="gender" value="male" id="male"> Male</dd>
+                                <dd><input type="radio" name="gender" value="female" id="female"> Female</dd>
+                                <dt><label>Comment: </label></dt>
+                                <dd><input type="text" name="comment" id="comment" style="padding: 4pt" required/></dd>
+                                <dd><input type="button" value="Submit" style="margin-left: 320px;" id="commentButton" onclick="validateForm()"></button></dd>
+                            </dl>
+                        </div>
+                        <div style="color: red;">
+                            <h6 id="firstMessage"></h6>
+                            <h6 id="lastMessage"></h6>
+                            <h6 id="diffMessage"></h6>
+                            <h6 id="phoneMessage"></h6>
+                            <h6 id="emailMessage"></h6>
+                            <h6 id="genderMessage"></h6>
+                            <h6 id="commentMessage"></h6>
+                        </div>
+                    </form>
+                    
+            </div>      
         </div>
     </div>
 

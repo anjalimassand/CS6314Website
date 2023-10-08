@@ -282,8 +282,8 @@ form.login [type=text], input[type=password] {
     padding: 25px; 
     background-color: rgb(222, 221, 226);
     margin-top: 50px;
-    margin-left: 300px;
-    margin-right: 300px;
+    margin-left: 250px;
+    margin-right: 250px;
     border-radius: 10px;
  }
 
@@ -308,18 +308,21 @@ form.login [type=text], input[type=password] {
 /* Contact us */
 
 .list {
-    text-align: center;
+    text-align: left;
+    margin: 0pt;
+    display: grid;
 }
 
 dt {
-    font-size: 15pt;
-    padding-bottom: 15pt;
-    margin-top: 14pt;
+    grid-column-start: 1;
+    font-size: 10pt;
+    padding-bottom: 1pt;
+    margin-top: 1pt;
 }
 
 dd {
-    font-size: 12 pt;
-    padding-bottom: 5pt;
-    margin-right: 25px;
+    grid-column-start: 2;
+    font-size: 10pt;
+    padding-bottom: 1pt;
 }
 
