@@ -57,7 +57,7 @@ h6 {
     color:whitesmoke;
     text-align: center;
     text-decoration: none;
-    padding: 16px 18px;
+    padding: 13px 13px;
     font-size: 16.5px;
 }
 
@@ -73,12 +73,15 @@ h6 {
     float: left;
     width: 25%;
     height: 420pt;
+    height: auto;
+    min-height: 420pt;
 }
   
 .column2 {
     float: left;
     width: 75%;
-    height: 420pt;
+    height: auto;
+    min-height: 420pt;
 }
 
 .row:after {
@@ -199,6 +202,7 @@ form.search::after {
 }
 
 .columnCard {
+    margin-top:-20px;
     float: left;
     width: 30%;
     padding: 0 10px;
@@ -241,7 +245,6 @@ form.search::after {
     visibility: hidden;
 }
 
-
 .loginButton { 
     background-color: rgb(51, 157, 192); 
     width: 100%;
@@ -276,7 +279,6 @@ form.login [type=text], input[type=password] {
     padding: 10px 18px;
     margin: 10px 5px;
  } 
-   
 
 .containerLogin { 
     padding: 25px; 
@@ -325,4 +327,36 @@ dd {
     font-size: 10pt;
     padding-bottom: 1pt;
 }
+
+/* Filter */
+.filterDiv {
+    display: none; /* Hidden by default */
+}
+
+  .show {
+    display: block;
+  }
+  
+  .containerFilter {
+    margin-top: 20px;
+    overflow: hidden;
+  }
+  
+  /* Style the buttons */
+
+  .btn {
+    border: 1px solid grey;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
 

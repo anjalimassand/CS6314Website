@@ -50,3 +50,26 @@ function validateForm() {
     }
     document.getElementById("commentMessage").innerHTML = text7;
 }
+
+var myInterval = setInterval(formatDate, 1000);
+
+function formatDate() {
+    var date = new Date();
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var seconds = date.getSeconds();
+    var ampm = hours >= 12 ? 'p.m.' : 'a.m.';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0'+minutes : minutes;
+    seconds = seconds < 10 ? '0'+seconds : seconds;
+    var strTime = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+    document.getElementById("date").innerHTML = (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+}
+
+var inventory = {
+    
+};
+
+
+  
