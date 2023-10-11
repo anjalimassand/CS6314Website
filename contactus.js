@@ -67,9 +67,6 @@ function formatDate() {
     document.getElementById("date").innerHTML = (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
 }
 
-var inventory = {
-    
-};
 
 
   

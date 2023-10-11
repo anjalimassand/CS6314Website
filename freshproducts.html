@@ -2,10 +2,9 @@
 <html>
 
 <head>
-    <script src="contactus.js"></script>
-    <script src="filter.js"></script>
     <title>Shopper's Stop: Fresh Products</title>
     <header>
+        <script src="contactus.js"></script>
         <div class="top"> 
             <img src="images/groceries.jpeg">
             <h1>Shopper's Stop</h1> 
@@ -92,38 +91,40 @@
 
                 <div class="rowCard">
                     <div class="columnCard">
-                        <div class="card filterDiv fruits">
+                        <div class="card filterDiv fruits" name="Strawberries">
                                 <img src="images/strawberry.jpeg" alt="Avatar" width="100%" height="180">
                                 <div class="container">
                                     <h4><b>Strawberries</b></h4>
                                     <p><strong>$3.49</strong> <br><em>1 lb</em></p>
-                                    <button type="button" class="center">Add to Cart</button>
+                                    <input type="number" class="center" id="strawberries-quantity" min="1" max="10" value="1">
+                                    <button type="button" class="center" onclick="addToCart('Strawberries')">Add to Cart</button>
+                                    <p class="out-of-stock-message" id="strawberries-out-of-stock"></p> 
                                 </div>
 
                         </div>
                     </div>
-                    <div class="columnCard">
-                        
-                            <div class="card filterDiv fruits">
-                                
+                    <div class="columnCard">      
+                            <div class="card filterDiv fruits" name="Grapes">   
                                     <img src="images/grapes.webp" alt="Avatar" width="100%" height="180">
                                     <div class="container">
                                         <h4><b>Grapes</b></h4> 
                                         <p><strong>$3.96</strong> <br><em>$1.99/lb</em></p> 
-                                        <button type="button" class="center">Add to Cart</button> 
+                                        <input type="number" class="center" id="grapes-quantity" min="1" max="10" value="1">
+                                        <button type="button" class="center" onclick="addToCart('Grapes')">Add to Cart</button>
+                                        <p class="out-of-stock-message" id="grapes-out-of-stock"></p> 
                                     </div>
-                                
-                                
                             </div>
                     </div>
                     <div class="columnCard">
-                        <div class="card filterDiv vegetables">
+                        <div class="card filterDiv vegetables" name="Cucumber">
                             
                                 <img src="images/cucumber.webp" alt="Avatar" width="100%" height="180">
                                 <div class="container">
                                     <h4><b>Cucumber</b></h4> 
                                     <p><strong>$0.59</strong> <br><em>1 ct</em></p> 
-                                    <button type="button" class="center">Add to Cart</button> 
+                                    <input type="number" class="center" id="cucumber-quantity" min="1" max="10" value="1">
+                                    <button type="button" class="center" onclick="addToCart('Cucumber')">Add to Cart</button> 
+                                    <p class="out-of-stock-message" id="cucumber-out-of-stock"></p>
                                 </div>
                            
                         </div>
@@ -140,7 +141,9 @@
         <h4 id="date" style="padding-top: 20px"><script>formatDate();</script></h4>
         <h6>Anjali Massand AJM180009</h6>
     </footer>
-
+   
+    <script src="filter.js"></script>
+    <script src="inventoryItems.js"></script>
 </body>
 
 </html>

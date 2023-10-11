@@ -195,6 +195,7 @@ form.search::after {
     border-color: grey;
     border-width: 1px;
     width: 80%;
+    margin-bottom: 15px;
 }
   
 .container {

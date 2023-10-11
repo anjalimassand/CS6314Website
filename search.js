@@ -7,19 +7,18 @@
 
     // Add an event listener to the form submit event
     document.querySelector(".search").addEventListener("submit", function(event) {
-        event.preventDefault(); // Prevent the form from submitting and refreshing the page
-        filterProducts(); // Call your filter function
+        event.preventDefault(); 
+        filterProducts();
     });
 
     // Function to filter products based on search input
     function filterProducts() { 
         errorMessage.style.display = "none";
         const searchTerm = searchInput.value.toLowerCase();
-        let noResultsFound = true; // Flag to check if any results are found
-        // Loop through all the product cards
+        let noResultsFound = true; 
         const cards = foodContainer.getElementsByClassName("card");
         var letters = /^[A-Za-z ]+$/;
-        
+
         for (const card of cards) {
             const productName = card.getAttribute("name").toLowerCase();
             
