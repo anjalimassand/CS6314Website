@@ -141,6 +141,10 @@ footer {
     block-size: 70pt;
 }
 
+.centerColumn {
+    text-align:center;
+}
+
 /* Search bar */
 
 * {
@@ -360,4 +364,6 @@ dd {
     background-color: #666;
     color: white;
   }
+
+
 

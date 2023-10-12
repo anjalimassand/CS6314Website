@@ -36,45 +36,25 @@
     <div style="background-color:aliceblue; padding-top: 10px; padding-bottom: 10px; font-size: 13.5pt">
         
             <h3>Shopping Cart</h3>
-            <table style="width:100%">
-                <tr>
-                  <th style="text-align:left">Item</th>
-                  <th>Quantity</th>
-                  <th>Price</th>
-                </tr>
-                <tr>
-                    <td>Grapes</td>
-                    <td style="text-align:center">2</td>
-                    <td style="text-align:center">$7.96</td>  
-                  </tr>
-                <tr>
-                  <td>Jovial Penne Pasta</td>
-                  <td style="text-align:center">1</td>
-                  <td style="text-align:center">$4.99</td>
-                </tr>
-                <tr>
-                    <td>Cheerios Cereal</td>
-                    <td style="text-align:center">1</td>
-                    <td style="text-align:center">$4.99</td>
-                </tr>
-                <tr>
-                    <td>Tax</td>
-                    <td></td>
-                    <td style="text-align:center">$1.48</td>
-                </tr>
-                <tr>
-                    <td>Total</td>
-                    <td></td>
-                    <td style="text-align:center"><b>$19.42</b></td>
-                </tr>
+            <table id="cartTable" style="width:100%">
+                <thead>
+                    <tr>
+                        <th style="text-align:left">Item</th>
+                        <th>Quantity</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
               </table>
               <button type="button" class="checkoutButton">Checkout</button>
 
               <div style="margin-top:60pt">
                 <h4 style="text-align: left; padding-left: 10px;">Checkout Steps:</h4>
                 <ol>
+                    <li>Click 'Checkout'</li>
                     <li>Login</li>
-                    <li>Apply coupons and click checkout.</li>
                     <li>Enter card information and submit.</li>
                 </ol>
               </div>
@@ -87,7 +67,7 @@
         <h4 id="date" style="padding-top: 20px"><script>formatDate();</script></h4>
         <h6>Anjali Massand AJM180009</h6>
     </footer>
-
+    <script src="cart.js"></script>
 </body>
 
 </html>
