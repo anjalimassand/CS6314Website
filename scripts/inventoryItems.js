@@ -1,9 +1,28 @@
-sessionStorage.clear();
 if (!sessionStorage.getItem('inventoryList')) {
     const initialInventory = [
-        { name: 'strawberries', quantity: 4, price: 3.49 },
-        { name: 'grapes', quantity: 5, price: 1.99 },
-        { name: 'cucumber', quantity: 6, price: 0.59 },
+        // fresh products
+        { name: 'strawberries', quantity: 10, price: 3.49 },
+        { name: 'grapes', quantity: 10, price: 4.99 },
+        { name: 'cucumber', quantity: 10, price: 0.59 },
+        { name: 'watermelon', quantity: 10, price: 5.00 },
+        { name: "apples", quantity: 10, price: 3.99 },
+        { name: "pineapple", quantity: 10, price: 3.99 },
+        { name: "broccoli", quantity: 10, price: 1.23 },
+        { name: "lettuce", quantity: 10, price: 1.79 },
+        { name: "cucumber", quantity: 10, price: 0.59 },
+        { name: "tulips", quantity: 7, price: 12.00 },
+        { name: "lilies", quantity: 8, price: 4.97 },
+        { name: "daisies", quantity: 9, price: 7.49 },
+        { name: "guacamole", quantity: 10, price: 3.99 },
+        { name: "hummus", quantity: 10, price: 3.50 },
+        { name: "salsa", quantity: 10, price: 1.59 },
+        { name: "pumpkin", quantity: 6, price: 4.99 },  
+        { name: "gourmet mushrooms", quantity: 5, price: 3.99 },
+
+        { name: "frozen pancakes", quantity: 10, price: 5.99 },
+        { name: "frizen broccoli", quantity: 6, price: 2.50 },  
+        { name: "gelato", quantity: 5, price: 5.99 },
+
         // Add more items as needed
     ];
     sessionStorage.setItem('inventoryList', JSON.stringify(initialInventory));
@@ -18,7 +37,7 @@ function updateItemPrice(itemName) {
         if (inventory[i].name.toLowerCase() === itemName.toLowerCase()) {
             const quantity = parseInt(quantityInput.value);
             const total = (inventory[i].price * quantity).toFixed(2);
-            priceElement.textContent = `$${total}`;
+         //   priceElement.textContent = `$${total}`;
             break;
         }
     }
@@ -33,7 +52,7 @@ function addToCart(itemName) {
 
     let itemIndex = -1;
     
-    console.log(inventory.length);
+    console.log(inventory);
     for (let i = 0; i < inventory.length; i++) {
         if (inventory[i].name.toLowerCase() === itemName.toLowerCase()) {
             itemIndex = i;

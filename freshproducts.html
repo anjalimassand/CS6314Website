@@ -2,9 +2,10 @@
 <html>
 
 <head>
+    
     <title>Shopper's Stop: Fresh Products</title>
     <header>
-        <script src="contactus.js"></script>
+        <script src="scripts/contactus.js"></script>
         <div class="top"> 
             <img src="images/groceries.jpeg">
             <h1>Shopper's Stop</h1> 
@@ -89,46 +90,7 @@
                     <button class="btn" onclick="filterSelection('rollbacks')"> Rollbacks</button>
                 </div>
 
-                <div class="rowCard">
-                    <div class="columnCard">
-                        <div class="card filterDiv fruits" name="Strawberries">
-                                <img src="images/strawberry.jpeg" alt="Avatar" width="100%" height="180">
-                                <div class="container">
-                                    <h4><b>Strawberries</b></h4>
-                                    <p id="strawberries-price">$3.49</p>
-                                    <input type="number" class="center" id="strawberries-quantity" min="1" max="10" value="1">
-                                    <button type="button" class="center" onclick="addToCart('Strawberries')">Add to Cart</button>
-                                    <p class="out-of-stock-message" id="strawberries-out-of-stock"></p> 
-                                </div>
-
-                        </div>
-                    </div>
-                    <div class="columnCard">      
-                            <div class="card filterDiv fruits" name="Grapes">   
-                                    <img src="images/grapes.webp" alt="Avatar" width="100%" height="180">
-                                    <div class="container">
-                                        <h4><b>Grapes</b></h4> 
-                                        <p id="grapes-price">$3.96</p> 
-                                        <input type="number" class="center" id="grapes-quantity" min="1" max="10" value="1">
-                                        <button type="button" class="center" onclick="addToCart('Grapes')">Add to Cart</button>
-                                        <p class="out-of-stock-message" id="grapes-out-of-stock"></p> 
-                                    </div>
-                            </div>
-                    </div>
-                    <div class="columnCard">
-                        <div class="card filterDiv vegetables" name="Cucumber">
-                            
-                                <img src="images/cucumber.webp" alt="Avatar" width="100%" height="180">
-                                <div class="container">
-                                    <h4><b>Cucumber</b></h4> 
-                                    <p id="cucumber-price">$0.59</p> 
-                                    <input type="number" class="center" id="cucumber-quantity" min="1" max="10" value="1">
-                                    <button type="button" class="center" onclick="addToCart('Cucumber')">Add to Cart</button> 
-                                    <p class="out-of-stock-message" id="cucumber-out-of-stock"></p>
-                                </div>
-                           
-                        </div>
-                    </div>
+                <div class="rowCard" id="productCards">
                     
                 </div>
                 
@@ -142,8 +104,9 @@
         <h6>Anjali Massand AJM180009</h6>
     </footer>
    
-    <script src="filter.js"></script>
-    <script src="inventoryItems.js"></script>
+    <script src="scripts/freshProduce.js"></script>
+    <script src="scripts/filter.js"></script>
+    <script src="scripts/inventoryItems.js"></script>
 </body>
 
 </html>

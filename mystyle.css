@@ -206,11 +206,12 @@ form.search::after {
     padding: 2px 16px;
 }
 
+
 .columnCard {
-    margin-top:-20px;
-    float: left;
-    width: 30%;
-    padding: 0 10px;
+    margin-top:20px;
+    float: left; 
+    width: 22%;
+ /*   padding: 0 10px; */
 }
   
 .rowCard {margin: 0 -5px;}

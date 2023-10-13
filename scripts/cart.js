@@ -1,36 +1,25 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Retrieve cart data from session storage
     const cartData = JSON.parse(sessionStorage.getItem('cartData'));
-
+    let subtotal = 0;
     if (cartData && cartData.length > 0) {
         const cartTable = document.getElementById('cartTable').getElementsByTagName('tbody')[0];
-        let subtotal = 0;
-
-        // Loop through cart items and add them to the table
-        cartData.forEach(item => {
+        const groupedCart = groupCartItems(cartData);
+        
+        for (const item of groupedCart) {
             const row = cartTable.insertRow(-1);
-            // Create the name cell
             const nameCell = row.insertCell(0);
-            nameCell.innerHTML = item.name;
-
-            // Create the quantity cell and set the class for center alignment
             const quantityCell = row.insertCell(1);
-            quantityCell.innerHTML = item.quantity;
-            quantityCell.classList.add('centerColumn'); // Add the 'centered' class
+            const priceCell = row.insertCell(2);
 
             nameCell.innerHTML = item.name;
             quantityCell.innerHTML = item.quantity;
+            quantityCell.classList.add('centerColumn');
             const itemTotal = item.price * item.quantity;
-            const priceCell = row.insertCell(2);
             priceCell.innerHTML = `$${itemTotal.toFixed(2)}`;
+            priceCell.classList.add('centerColumn');
             subtotal += itemTotal;
-            
-            // Create the price cell and set the class for center alignment
-            
-            priceCell.classList.add('centerColumn'); // Add the 'centered' class
-
-            
-        });
+        }
 
         // Calculate tax (replace 0.08 with your tax rate)
         const taxRate = 0.08; // 8% tax rate
@@ -57,3 +46,21 @@ document.addEventListener("DOMContentLoaded", function() {
         totalAmountCell.classList.add('centerColumn');
     }
 });
+
+function groupCartItems(cartData) {
+    const groupedCart = [];
+
+    for (const item of cartData) {
+        const existingItem = groupedCart.find((groupedItem) => groupedItem.name === item.name);
+
+        if (existingItem) {
+            // Item with the same name is already in groupedCart, update the quantity
+            existingItem.quantity += item.quantity;
+        } else {
+            // Item is not in groupedCart, add it
+            groupedCart.push({ name: item.name, quantity: item.quantity, price: item.price });
+        }
+    }
+
+    return groupedCart;
+}
