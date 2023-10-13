@@ -19,9 +19,19 @@ if (!sessionStorage.getItem('inventoryList')) {
         { name: "pumpkin", quantity: 6, price: 4.99 },  
         { name: "gourmet mushrooms", quantity: 5, price: 3.99 },
 
-        { name: "frozen pancakes", quantity: 10, price: 5.99 },
-        { name: "frizen broccoli", quantity: 6, price: 2.50 },  
-        { name: "gelato", quantity: 5, price: 5.99 },
+        { name: "frozen pancakes", price: 5.99 },
+        { name: "waffles", price: 4.29 },
+        { name: "breakfast burritos", price: 1.25 },
+        { name: "gelato", price: 5.99 },
+        { name: "ice cream cones", price: 5.99 },
+        { name: "cheesecake", price: 5.99 },
+        { name: "Pepperoni pizza", price: 4.99 },
+        { name: "four Cheese pizza", price: 4.99 },
+        { name: "four meat pizza", price: 4.99 },
+        { name: "frozen meatballs", price: 4.99 },
+        { name: "chicken strips", price: 9.99 },
+        { name: "popcorn shrimp", price: 3.99 },
+        
 
         // Add more items as needed
     ];
