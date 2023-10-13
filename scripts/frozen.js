@@ -1,11 +1,18 @@
 document.addEventListener("DOMContentLoaded", function() {
     // Define the product data, for example:
     const products = [
-        { name: "Frozen Pancakes", price: 5.99, imageSrc: "images/frozenpancakes.webp", mainCat: "Frozen", category: ["rollbacks", "breakfast"]},
-       
-        { name: "Gelato", price: 5.99, imageSrc: "images/gelato.png", mainCat: "Frozen", category: ["dessert", "snacks"] },
-       
-      //  { name: "Watermelon", price: 5.00, imageSrc: "images/watermelon.png", mainCat: "Frozen", category: "precut" },
+        { name: "Frozen Pancakes", price: 5.99, imageSrc: "images/frozenpancakes.webp", mainCat: "Frozen", category: ["rollbacks", "breakfast", "meals"]},
+        { name: "Waffles", price: 4.29, imageSrc: "images/waffles.png", mainCat: "Frozen", category: ["meals", "breakfast"]},
+        { name: "Breakfast Burritos", price: 1.25, imageSrc: "images/burrito.png", mainCat: "Frozen", category: ["meals", "breakfast"]},
+        { name: "Gelato", price: 5.99, imageSrc: "images/gelato.png", mainCat: "Frozen", category: ["dessert", "rollbacks"] },
+        { name: "Ice Cream Cones", price: 5.99, imageSrc: "images/icecream.png", mainCat: "Frozen", category: ["dessert", "snacks"]},
+        { name: "Cheesecake", price: 5.99, imageSrc: "images/cheesecake.png", mainCat: "Frozen", category: ["dessert", "snacks"]},
+        { name: "Pepperoni Pizza", price: 4.99, imageSrc: "images/pepperoni.png", mainCat: "Frozen", category: ["pizza", "meals"]},
+        { name: "Four Cheese Pizza", price: 4.99, imageSrc: "images/fourcheese.png", mainCat: "Frozen", category: ["pizza", "meals"]},
+        { name: "Four Meat Pizza", price: 4.99, imageSrc: "images/fourmeat.png", mainCat: "Frozen", category: ["pizza", "meals"]},
+        { name: "Frozen Meatballs", price: 4.99, imageSrc: "images/meatballs.png", mainCat: "Frozen", category: ["meat", "rollbacks"]},
+        { name: "Chicken Strips", price: 9.99, imageSrc: "images/chicken.png", mainCat: "Frozen", category: ["snacks", "meat"]},
+        { name: "Popcorn Shrimp", price: 3.99, imageSrc: "images/shrimp.png", mainCat: "Frozen", category: ["snacks", "meat"] },
         
     ];
 
@@ -35,5 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Append the card to the product cards container
         productCardsContainer.appendChild(card);
+        filterSelection("all");
     });
 });

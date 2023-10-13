@@ -46,5 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Append the card to the product cards container
         productCardsContainer.appendChild(card);
+        filterSelection("all");
     });
 });
