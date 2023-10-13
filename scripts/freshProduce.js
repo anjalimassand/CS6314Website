@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Define the product data, for example:
     const products = [
         { name: "Strawberries", price: 3.49, imageSrc: "images/strawberry.jpeg", mainCat: "Fresh Produce", category: "fruits"},
         { name: "Grapes", price: 3.99, imageSrc: "images/grapes.webp", mainCat: "Fresh Produce", category: ["fruits", "rollbacks"] },
@@ -20,19 +19,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
     ];
 
-    // Get the container for product cards
     const productCardsContainer = document.getElementById("productCards");
 
-    // Loop through the product data and create card elements
     products.forEach(product => {
         const card = document.createElement("div");
         card.classList.add("columnCard");
         card.classList.add("card");
         card.classList.add("filterDiv");
-        card.classList.add(product.category); // Assign the category dynamically
+        card.classList.add(product.category); 
         card.setAttribute("name", product.name);
 
-        // Create card content
         card.innerHTML = `
             <img src="${product.imageSrc}" alt="Avatar" width="100%" height="180">
             <div class="container">
@@ -44,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         `;
 
-        // Append the card to the product cards container
         productCardsContainer.appendChild(card);
         filterSelection("all");
     });
