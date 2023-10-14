@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
     const products = [
         { name: "Pumpkin Mix", price: 3.99, imageSrc: "images/pumpkinmix.png", mainCat: "Baking"},
-        { name: "Pie Crust", price: 5.29, imageSrc: "images/crust.png", mainCat: "Baking"},
-        { name: "Pie Crusts", price: 3.49, imageSrc: "images/crust2.png", mainCat: "Baking"},
+        { name: "Pie Crust", price: 3.49, imageSrc: "images/crust.png", mainCat: "Baking"},
+        { name: "Pie Crusts", price: 5.29, imageSrc: "images/crust2.png", mainCat: "Baking"},
         { name: "Pan", price: 7.99, imageSrc: "images/pan.png", mainCat: "Baking"},
         { name: "Circular Pan", price: 4.99, imageSrc: "images/pan2.png", mainCat: "Baking"},
         { name: "Pudding/Pie Filling Mix", price: 1.67, imageSrc: "images/pudding.png", mainCat: "Baking"},
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p id="${product.name.toLowerCase()}-price">$${product.price.toFixed(2)}</p>
                 <input type="number" class="center" id="${product.name.toLowerCase()}-quantity" min="1" max="10" value="1">
                 <button type="button" class="center" onclick="addToCart('${product.name}')">Add to Cart</button>
-                <p class="out-of-stock-message" id="${product.name.toLowerCase()}-out-of-stock"></p>
+                <p class="out-of-stock-message" id="${product.name.toLowerCase()}-out-of-stock" style="display:none;></p>
             </div>
         `;
 

@@ -101,6 +101,7 @@ function updateItemPrice(itemName) {
 function addToCart(itemName) {
     const outOfStockMessage = document.getElementById(`${itemName.toLowerCase()}-out-of-stock`);
     const quantityInput = document.getElementById(`${itemName.toLowerCase()}-quantity`);
+    const added = document.getElementById('added');
     
     const inventory = JSON.parse(sessionStorage.getItem('inventoryList'));
     const cart = JSON.parse(sessionStorage.getItem('cartData')) || [];
@@ -139,14 +140,14 @@ function addToCart(itemName) {
         cart.push(cartItem);
         sessionStorage.setItem('cartData', JSON.stringify(cart));
 
-
-        // Reset the product quantity input to 1 for the next selection
         quantityInput.value = 1;
 
-        // Hide the "Out of Stock" message if it was displayed
         outOfStockMessage.style.display = "none";
+        added.textContent = quantity + " " + itemName + " added!"
+        added.textContent.display = "block";
+    
     } else {
-        // Display out of stock message
+        added.style.display = "none";
         outOfStockMessage.textContent = availableQuantity + " available";
         outOfStockMessage.style.display = "block";
     }

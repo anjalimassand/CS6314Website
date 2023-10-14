@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <p id="${product.name.toLowerCase()}-price">$${product.price.toFixed(2)}</p>
                 <input type="number" class="center" id="${product.name.toLowerCase()}-quantity" min="1" max="10" value="1">
                 <button type="button" class="center" onclick="addToCart('${product.name}')">Add to Cart</button>
-                <p class="out-of-stock-message" id="${product.name.toLowerCase()}-out-of-stock"></p>
+                <p class="out-of-stock-message" id="${product.name.toLowerCase()}-out-of-stock" style="display:none;></p>
             </div>
         `;
 
