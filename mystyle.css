@@ -229,7 +229,7 @@ form.search::after {
 
 .checkoutButton {
     background-color: rgb(51, 157, 192); 
-    width: 50%;
+    width: 24%;
     color: whitesmoke; 
     padding: 10px; 
     border: none; 
@@ -366,5 +366,22 @@ dd {
     color: white;
   }
 
+  /* special offer */
 
+  .specialOfferButton {
+    background-color: rgb(51, 157, 192); 
+    width: 90%;
+    color: whitesmoke; 
+    padding: 15px; 
+    margin-top: 30px;
+    margin-left: 55px;
+    border: none; 
+    cursor: pointer; 
+    font-size: 13pt;
+    border: 1px solid grey;
+  }
+
+  .questions {
+      padding-bottom: 30 px;
+  }
 

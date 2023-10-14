@@ -36,9 +36,9 @@ if (!sessionStorage.getItem('inventoryList')) {
         { name: "butter", quantity: 10, price: 3.99 },
         { name: "guacamole", quantity: 10, price: 3.99 },
         { name: "ketchup", quantity: 10, price: 3.29 },
-        { name: "penne pasta", quantity: 10, price: 1.25 },
-        { name: "spaghetti pasta", quantity: 10, price: 1.50 },
-        { name: "rotini pasta", quantity: 10, price: 1.50 },
+        { name: "penne pasta", quantity: 8, price: 1.25 },
+        { name: "spaghetti pasta", quantity: 8, price: 1.50 },
+        { name: "rotini pasta", quantity: 8, price: 1.50 },
         { name: "canned grean beans", quantity: 10, price: 0.89 },
         { name: "canned corn", quantity: 10, price: 0.89 },
         { name: "canned peas", quantity: 10, price: 1.59 },
@@ -48,9 +48,37 @@ if (!sessionStorage.getItem('inventoryList')) {
         { name: "mustard", quantity: 10, price: 0.99 },
         { name: "mayonnaise", quantity: 10, price: 3.99 },
        
+        { name: "cheerios cereal", quantity: 10, price: 4.99 },
+        { name: "crunch berries", quantity: 10, price: 3.99 },
+        { name: "raisin bran", quantity: 10, price: 2.50 },
+        { name: "pancake mix", quantity: 10, price: 4.99 },
+        { name: "waffle mix", quantity: 10, price: 2.89 },
+        { name: "maple syrup", quantity: 10, price: 6.49 },
+        { name: "strawberry oatmeal", quantity: 10, price: 1.67 },
+        { name: "caramel oatmeal", quantity: 10, price: 7.99 },
+        { name: "granola bars", quantity: 10, price: 10.99 },
+        { name: "croissants", quantity: 10, price: 4.99 }, 
+        { name: "bagels", quantity: 10, price: 4.79 },
+        { name: "muffins", quantity: 10, price: 4.99 },
         
+        { name: "pumpkin mix", quantity: 10, price: 3.99 },
+        { name: "pie crust", quantity: 10, price: 5.29 },
+        { name: "pie crusts", quantity: 10, price: 3.49 },
+        { name: "pan", quantity: 10, price: 7.99 },
+        { name: "circular pan", quantity: 10, price: 4.99 },
+        { name: "pudding/pie filling mix", quantity: 10, price: 1.67 },
 
-        // Add more items as needed
+        { name: "snickers", quantity: 6, price: 4.49 },
+        { name: "kitkat", quantity: 6, price: 4.49 },
+        { name: "jolly rancher", quantity: 6, price: 3.49 },
+        { name: "nerds", quantity: 6, price: 1.25 },
+        { name: "reeses", quantity: 6, price: 4.49 },
+        { name: "butterfinger", quantity: 6, price: 4.49 },
+
+        { name: "oreo cookies", quantity: 10, price: 3.49 },
+        { name: "lays chips", quantity: 10, price: 3.99 },
+        { name: "animal crackers", quantity: 10, price: 3.59 },
+        { name: "pretzel crips", quantity: 10, price: 3.99 },
     ];
     sessionStorage.setItem('inventoryList', JSON.stringify(initialInventory));
 }

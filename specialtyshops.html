@@ -74,43 +74,36 @@
         <div class="column2" style="background-color:aliceblue">
             <div>
                 <h3>Specialty Shops</h3>
-                <form class="search">
-                    <input type="text" placeholder="Search..." name="search">
-                    <button type="submit">Search<i class="fa fa-search"></i></button>
-                </form>
-
-                <div class="rowCard">
-                    <div class="columnCard">
-                        <div class="card">
-                            <img src="images/naan.png" alt="Avatar" width="100%" height="180">
-                            <div class="container">
-                              <h4><b>Stonefire Naan</b></h4> 
-                              <p><strong>$3.00</strong> <br><em>8.8 oz</em></p>
-                              <button type="button" class="center">Add to Cart</button> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columnCard">
-                        <div class="card">
-                            <img src="images/butter.png" alt="Avatar" width="100%" height="180">
-                            <div class="container">
-                              <h4><b>Gourmet Butter</b></h4> 
-                              <p><strong>$3.99</strong> <br><em>3 oz</em></p> 
-                              <button type="button" class="center">Add to Cart</button> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="columnCard">
-                        <div class="card">
-                            <img src="images/cheese.png" alt="Avatar" width="100%" height="180">
-                            <div class="container">
-                              <h4><b>Sartori Cheese</b></h4> 
-                              <p><strong>$4.49</strong> <br><em>7 oz</em></p> 
-            
-                              <button type="button" class="center">Add to Cart</button> 
-                            </div>
-                        </div>
-                    </div>
+                <button class="specialOfferButton" id="specialOfferButton">Click to answer special offer questionnaire! </button>
+                <div id="questionContainer" style="display: none; text-align: center">
+                    <h4>Question 1: Are you a student?</h4>
+                    <p><br></p>
+                    <label><input type="radio" name="student" value="yes"> Yes</label>
+                    <label><input type="radio" name="student" value="no"> No</label>
+                    <button id="nextButton">Next</button>
+                    <button id="skipButton">Skip</button>
+                </div>
+                <div id="questionContainer" style="display: none;">
+                    <h4>Question 2: Are you a low income person?</h4>
+                    <p><br></p>
+                    <label><input type="radio" name="student" value="yes"> Yes</label>
+                    <label><input type="radio" name="student" value="no"> No</label>
+                    <button id="nextButton">Next</button>
+                    <button id="skipButton">Skip</button>
+                </div>
+                <div id="questionContainer" style="display: none;">
+                    <h4>Question 3: Are you a member of Shopper's Stop?</h4>
+                    <p><br></p>
+                    <label><input type="radio" name="student" value="yes"> Yes</label>
+                    <label><input type="radio" name="student" value="no"> No</label>
+                    <button id="nextButton">Next</button>
+                    <button id="skipButton">Skip</button>
+                </div>
+                <div id="resultContainer" style="display: none;">
+                    <h4><b><u>Special Offer Result</u></b></h4>
+                    <p id="qualificationReason"></p>
+                    <p id="offerDetails"></p>
+                    <p id="timeSpent"></p>
                 </div>
                 
             </div>
@@ -122,7 +115,7 @@
         <h4 id="date" style="padding-top: 20px"><script>formatDate();</script></h4>
         <h6>Anjali Massand AJM180009</h6>
     </footer>
-
+    <script src="scripts/specialtyshops.js"></script>
 </body>
 
 </html>
