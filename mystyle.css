@@ -236,7 +236,7 @@ form.search::after {
     border: none; 
     cursor: pointer; 
     font-size: 13pt;
-    margin-right: 7pt;
+    margin-right: 6pt;
     float:right;
     border: 1px solid grey;
     vertical-align: auto;
@@ -245,6 +245,25 @@ form.search::after {
 .checkoutButton:hover { 
     background: rgb(82, 57, 172);
 }
+
+.clearButton {
+    background-color: rgb(51, 157, 192); 
+    width: 24%;
+    color: whitesmoke; 
+    padding: 10px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 13pt;
+    margin-left: 4pt;
+   
+    border: 1px solid grey;
+    vertical-align: auto;
+}
+
+.clearButton:hover { 
+    background: rgb(82, 57, 172);
+}
+
 
 /* my account */
 

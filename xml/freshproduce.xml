@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <name>Strawberries</name>
+        <quantity>10</quantity>
+        <price>3.49</price>
+        <imageSrc>images/strawberry.jpeg</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>fruits</category>
+    </product>
+
+    <product>
+        <name>Grapes</name>
+        <quantity>10</quantity>
+        <price>4.99</price>
+        <imageSrc>images/grapes.webp</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>fruits-rollbacks</category>
+    </product>
+
+    <product>
+        <name>Cucumber</name>
+        <quantity>10</quantity>
+        <price>0.59</price>
+        <imageSrc>images/cucumber.webp</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>vegetables</category>
+    </product>
+
+    <product>
+        <name>Watermelon</name>
+        <quantity>10</quantity>
+        <price>5.00</price>
+        <imageSrc>images/watermelon.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>precut</category>
+    </product>
+
+    <product>
+        <name>Apples</name>
+        <quantity>10</quantity>
+        <price>3.99</price>
+        <imageSrc>images/apple.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>precut</category>
+    </product>
+
+    <product>
+        <name>Pineapple</name>
+        <quantity>10</quantity>
+        <price>3.99</price>
+        <imageSrc>images/pineapple.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>precut</category>
+    </product>
+
+    <product>
+        <name>Broccoli</name>
+        <quantity>10</quantity>
+        <price>1.23</price>
+        <imageSrc>images/broc.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>vegetables</category>
+    </product>
+
+    <product>
+        <name>Lettuce</name>
+        <quantity>10</quantity>
+        <price>1.79</price>
+        <imageSrc>images/lettuce.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>vegetables</category>
+    </product>
+
+    <product>
+        <name>Tulips</name>
+        <quantity>10</quantity>
+        <price>12.00</price>
+        <imageSrc>images/tulips.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>flowers</category>
+    </product>
+
+    <product>
+        <name>Lilies</name>
+        <quantity>10</quantity>
+        <price>4.97</price>
+        <imageSrc>images/lily.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>flowers</category>
+    </product>
+
+    <product>
+        <name>Daisies</name>
+        <quantity>10</quantity>
+        <price>7.49</price>
+        <imageSrc>images/daisy.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>flowers</category>
+    </product>
+
+    <product>
+        <name>Guacamole</name>
+        <quantity>10</quantity>
+        <price>3.99</price>
+        <imageSrc>images/guac.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>salsa</category>
+    </product>
+
+    <product>
+        <name>Salsa</name>
+        <quantity>10</quantity>
+        <price>1.59</price>
+        <imageSrc>images/salsa.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>salsa</category>
+    </product>
+
+    <product>
+        <name>Pumpkin</name>
+        <quantity>10</quantity>
+        <price>4.99</price>
+        <imageSrc>images/pumpkin.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>fruits-season</category>
+    </product>
+
+    <product>
+        <name>Gourmet Mushrooms</name>
+        <quantity>10</quantity>
+        <price>3.99</price>
+        <imageSrc>images/mushroom.png</imageSrc>
+        <mainCat>Fresh Produce</mainCat>
+        <category>new</category>
+    </product>
+</products>

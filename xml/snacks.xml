@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <name>Oreo Cookies</name>
+        <quantity>10</quantity>
+        <price>3.49</price>
+        <imageSrc>images/oreo.png</imageSrc>
+        <mainCat>Snacks</mainCat>
+    </product>
+    <product>
+        <name>Lays Chips</name>
+        <quantity>10</quantity>
+        <price>3.99</price>
+        <imageSrc>images/lays.jpeg</imageSrc>
+        <mainCat>Snacks</mainCat>
+    </product>
+    <product>
+        <name>Animal Crackers</name>
+        <quantity>10</quantity>
+        <price>3.59</price>
+        <imageSrc>images/crackers.png</imageSrc>
+        <mainCat>Snacks</mainCat>
+    </product>
+    <product>
+        <name>Pretzel Crisps</name>
+        <quantity>10</quantity>
+        <price>3.99</price>
+        <imageSrc>images/pretzel.png</imageSrc>
+        <mainCat>Snacks</mainCat>
+    </product>
+    <product>
+        <name>KitKat Minis</name>
+        <quantity>10</quantity>
+        <price>7.00</price>
+        <imageSrc>images/kitkat.png</imageSrc>
+        <mainCat>Snacks</mainCat>
+    </product>
+ 
+</products>

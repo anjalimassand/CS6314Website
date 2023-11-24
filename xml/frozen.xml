@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+    <product>
+        <name>Frozen Pancakes</name>
+        <quantity>10</quantity>
+        <price>5.99</price>
+        <imageSrc>images/frozenpancakes.webp</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>rollbacks-breakfast-meals</category>
+        </categories>
+    </product>
+    <product>
+        <name>Waffles</name>
+        <quantity>10</quantity>
+        <price>4.29</price>
+        <imageSrc>images/waffles.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>meals-breakfast</category>
+        </categories>
+    </product>
+    <product>
+        <name>Breakfast Burritos</name>
+        <quantity>10</quantity>
+        <price>1.25</price>
+        <imageSrc>images/burrito.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>meals-breakfast</category>
+        </categories>
+    </product>
+    <product>
+        <name>Gelato</name>
+        <quantity>10</quantity>
+        <price>5.99</price>
+        <imageSrc>images/gelato.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>dessert-rollbacks</category>
+        </categories>
+    </product>
+    <product>
+        <name>Ice Cream Cones</name>
+        <quantity>10</quantity>
+        <price>5.99</price>
+        <imageSrc>images/icecream.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>dessert-snacks</category>
+        </categories>
+    </product>
+    <product>
+        <name>Cheesecake</name>
+        <quantity>10</quantity>
+        <price>5.99</price>
+        <imageSrc>images/cheesecake.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>dessert-snacks</category>
+        </categories>
+    </product>
+    <product>
+        <name>Pepperoni Pizza</name>
+        <quantity>10</quantity>
+        <price>4.99</price>
+        <imageSrc>images/pepperoni.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>pizza-meals</category>
+        </categories>
+    </product>
+    <product>
+        <name>Four Cheese Pizza</name>
+        <quantity>10</quantity>
+        <price>4.99</price>
+        <imageSrc>images/fourcheese.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>pizza-meals</category>
+        </categories>
+    </product>
+    <product>
+        <name>Four Meat Pizza</name>
+        <quantity>10</quantity>
+        <price>4.99</price>
+        <imageSrc>images/fourmeat.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>pizza-meals</category>
+        </categories>
+    </product>
+    <product>
+        <name>Frozen Meatballs</name>
+        <quantity>10</quantity>
+        <price>4.99</price>
+        <imageSrc>images/meatballs.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>meat-rollbacks</category>
+        </categories>
+    </product>
+    <product>
+        <name>Chicken Strips</name>
+        <quantity>10</quantity>
+        <price>9.99</price>
+        <imageSrc>images/chicken.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>snacks-meat</category>
+        </categories>
+    </product>
+    <product>
+        <name>Popcorn Shrimp</name>
+        <quantity>10</quantity>
+        <price>3.99</price>
+        <imageSrc>images/shrimp.png</imageSrc>
+        <mainCat>Frozen</mainCat>
+        <categories>
+            <category>snacks-meat</category>
+        </categories>
+    </product>
+</products>
