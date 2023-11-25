@@ -1,6 +1,9 @@
 function validateForm() {
     var flag = true;
     var letters = /^[A-Za-z]+$/;
+
+    clearMessages();
+
     var firstInput = document.getElementById("first").value;
     var text1 = "";
     if (!firstInput.match(letters)) {
@@ -82,6 +85,15 @@ function validateForm() {
     return true;
 }
 
+function clearMessages() {
+    // Clear all error messages
+    var errorMessages = ["8Message", "pwdMessage", "firstMessage", "lastMessage", "diffMessage", "bdayMessage", "phoneMessage", "emailMessage", "genderMessage", "addMessage"];
+
+    for (var i = 0; i < errorMessages.length; i++) {
+        document.getElementById(errorMessages[i]).innerHTML = "";
+    }
+}
+
 var myInterval = setInterval(formatDate, 1000);
 
 function formatDate() {
@@ -98,6 +110,10 @@ function formatDate() {
     document.getElementById("date").innerHTML = (date.getMonth()+1) + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
 }
 
+function displaySuccessMessage() {
+    var successDiv = document.getElementById("successMessage");
+    successDiv.style.display = "block";
+}
 
 
   
