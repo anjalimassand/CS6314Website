@@ -1,3 +1,11 @@
+<?php
+include 'config.php';
+session_start();
+if (isset($_SESSION['username'])) {
+    echo "Hello, ", $_SESSION['username'];
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,19 +26,19 @@
     
 
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="freshproducts.html">Fresh Products</a>
-        <a href="frozen.html">Frozen</a>
-        <a href="pantry.html">Pantry</a>
-        <a href="breakfastcereal.html">Breakfast & Cereal</a>
-        <a href="baking.html">Baking</a>
-        <a href="snacks.html">Snacks</a>
-        <a href="candy.html">Candy</a>
-        <a href="specialtyshops.html">Specialty Shops</a>
-        <a href="deals.html">Deals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="myaccount.html">My Account</a>
+        <a href="index.php">Home</a>
+        <a href="freshproducts.php">Fresh Products</a>
+        <a href="frozen.php">Frozen</a>
+        <a href="pantry.php">Pantry</a>
+        <a href="breakfastcereal.php">Breakfast & Cereal</a>
+        <a href="baking.php">Baking</a>
+        <a href="snacks.php">Snacks</a>
+        <a href="candy.php">Candy</a>
+        <a href="specialtyshops.php">Specialty Shops</a>
+        <a href="deals.php">Deals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="myaccount.php">My Account</a>
         <a href="cart.php">Shopping Cart</a>
     </div>
 

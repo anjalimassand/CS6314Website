@@ -1,3 +1,11 @@
+<?php
+include 'config.php';
+session_start();
+if (isset($_SESSION['username'])) {
+    echo "Hello, ", $_SESSION['username'];
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -18,19 +26,19 @@
     <link rel="stylesheet" href="mystyle.css">
     
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="freshproducts.html">Fresh Products</a>
-        <a href="frozen.html">Frozen</a>
-        <a href="pantry.html">Pantry</a>
-        <a href="breakfastcereal.html">Breakfast & Cereal</a>
-        <a href="baking.html">Baking</a>
-        <a href="snacks.html">Snacks</a>
-        <a href="candy.html">Candy</a>
-        <a href="specialtyshops.html">Specialty Shops</a>
-        <a href="deals.html">Deals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="myaccount.html">My Account</a>
+        <a href="index.php">Home</a>
+        <a href="freshproducts.php">Fresh Products</a>
+        <a href="frozen.php">Frozen</a>
+        <a href="pantry.php">Pantry</a>
+        <a href="breakfastcereal.php">Breakfast & Cereal</a>
+        <a href="baking.php">Baking</a>
+        <a href="snacks.php">Snacks</a>
+        <a href="candy.php">Candy</a>
+        <a href="specialtyshops.php">Specialty Shops</a>
+        <a href="deals.php">Deals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="myaccount.php">My Account</a>
         <a href="cart.php">Shopping Cart</a>
     </div>
     
@@ -49,6 +57,15 @@
             <div class="column2" style="background-color:aliceblue">
                 <div>
                     <h3>Shopping Cart</h3>
+                    <?php
+                                
+                        // Check if the user is not logged in
+                        if (!isset($_SESSION['username'])) {
+                            // Redirect to the myaccount.php page
+                            echo '<h5>Not signed in? <a href="myaccount.php">Login Now!</a></h5>';
+                            //exit(); // Stop further execution of the script
+                        }
+                    ?>
                     <table id="cartTable" style="width:100%">
                         <thead>
                             <tr>
@@ -76,6 +93,7 @@
     <script src="scripts/cart.js"></script>
 
     <?php
+        
         // Function to update XML file and return success status
         function updateXML($productName, $quantity, $xmlFilePath) {
             // Load XML file
@@ -152,7 +170,7 @@
                         echo "Failed to update JSON file $jsonFilePath.\n";
                     }
                 }
-            }
+            } 
         } else {
        //     echo "Error: 'cartData' not present in the POST request.";
         }

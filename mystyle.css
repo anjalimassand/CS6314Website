@@ -405,3 +405,18 @@ dd {
       padding-bottom: 30 px;
   }
 
+.logoutButton {
+    background-color: rgb(51, 157, 192); 
+    width: 50%;
+    color: whitesmoke; 
+    padding: 15px; 
+    margin: 10px 0px; 
+    border: none; 
+    cursor: pointer; 
+    font-size: 13pt;
+    border: 1px solid grey;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    
+}

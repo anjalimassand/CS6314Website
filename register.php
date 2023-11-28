@@ -23,19 +23,19 @@
     <link rel="stylesheet" href="mystyle.css">
 
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="freshproducts.html">Fresh Products</a>
-        <a href="frozen.html">Frozen</a>
-        <a href="pantry.html">Pantry</a>
-        <a href="breakfastcereal.html">Breakfast & Cereal</a>
-        <a href="baking.html">Baking</a>
-        <a href="snacks.html">Snacks</a>
-        <a href="candy.html">Candy</a>
-        <a href="specialtyshops.html">Specialty Shops</a>
-        <a href="deals.html">Deals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="myaccount.html">My Account</a>
+        <a href="index.php">Home</a>
+        <a href="freshproducts.php">Fresh Products</a>
+        <a href="frozen.php">Frozen</a>
+        <a href="pantry.php">Pantry</a>
+        <a href="breakfastcereal.php">Breakfast & Cereal</a>
+        <a href="baking.php">Baking</a>
+        <a href="snacks.php">Snacks</a>
+        <a href="candy.php">Candy</a>
+        <a href="specialtyshops.php">Specialty Shops</a>
+        <a href="deals.php">Deals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="myaccount.php">My Account</a>
         <a href="cart.php">Shopping Cart</a>
     </div>
 
@@ -49,7 +49,7 @@
 
                     <!-- Bootstrap alert for success message -->
                     <div id="successMessage" class="alert alert-success mt-3" role="alert" style="display: none;">
-                        Registered successfully! <a href="myaccount.html">Click to Login Now!</a>
+                        Registered successfully! <a href="myaccount.php">Click to Login Now!</a>
                     </div>
 
                     <form name="commentForm" class="login needs-validation" action="" method="post" onsubmit="return validateForm()" novalidate>
@@ -122,7 +122,8 @@
                     
 
                     <?php
-                    //  include('config.php');
+                    include 'config.php';
+                    /*
                     $servername = "127.0.0.1";
                     $username = "root";
                     $password = "";
@@ -134,8 +135,8 @@
                     // Check connection
                     if ($conn->connect_error) {
                         die("Connection failed: " . $conn->connect_error);
-}
-                    
+                    }
+                    */
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Get user input from the form
                         $username = $_POST['username']; 
@@ -214,19 +215,19 @@
     
 
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="freshproducts.html">Fresh Products</a>
-        <a href="frozen.html">Frozen</a>
-        <a href="pantry.html">Pantry</a>
-        <a href="breakfastcereal.html">Breakfast & Cereal</a>
-        <a href="baking.html">Baking</a>
-        <a href="snacks.html">Snacks</a>
-        <a href="candy.html">Candy</a>
-        <a href="specialtyshops.html">Specialty Shops</a>
-        <a href="deals.html">Deals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="myaccount.html">My Account</a>
+        <a href="index.php">Home</a>
+        <a href="freshproducts.php">Fresh Products</a>
+        <a href="frozen.php">Frozen</a>
+        <a href="pantry.php">Pantry</a>
+        <a href="breakfastcereal.php">Breakfast & Cereal</a>
+        <a href="baking.php">Baking</a>
+        <a href="snacks.php">Snacks</a>
+        <a href="candy.php">Candy</a>
+        <a href="specialtyshops.php">Specialty Shops</a>
+        <a href="deals.php">Deals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="myaccount.php">My Account</a>
         <a href="cart.php">Shopping Cart</a>
     </div>
 
@@ -280,7 +281,7 @@
                     </form>
 
                     <div id="successMessage" style="color: red; display: none;">
-                        Registered successfully! <a href="myaccount.html">Register Now</a>
+                        Registered successfully! <a href="myaccount.php">Register Now</a>
                     </div>
                     
                   

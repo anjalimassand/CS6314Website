@@ -1,11 +1,19 @@
+<?php
+include 'config.php';
+session_start();
+if (isset($_SESSION['username'])) {
+    echo "Hello, ", $_SESSION['username'];
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
     
-    <title>Shopper's Stop: Frozen</title>
+    <title>Shopper's Stop: Fresh Products</title>
     <header>
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        
         <script src="scripts/contactus.js"></script>
         <div class="top"> 
             <img src="images/groceries.jpeg">
@@ -18,19 +26,19 @@
 <body>
     <link rel="stylesheet" href="mystyle.css">
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="freshproducts.html">Fresh Products</a>
-        <a href="frozen.html">Frozen</a>
-        <a href="pantry.html">Pantry</a>
-        <a href="breakfastcereal.html">Breakfast & Cereal</a>
-        <a href="baking.html">Baking</a>
-        <a href="snacks.html">Snacks</a>
-        <a href="candy.html">Candy</a>
-        <a href="specialtyshops.html">Specialty Shops</a>
-        <a href="deals.html">Deals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="myaccount.html">My Account</a>
+        <a href="index.php">Home</a>
+        <a href="freshproducts.php">Fresh Products</a>
+        <a href="frozen.php">Frozen</a>
+        <a href="pantry.php">Pantry</a>
+        <a href="breakfastcereal.php">Breakfast & Cereal</a>
+        <a href="baking.php">Baking</a>
+        <a href="snacks.php">Snacks</a>
+        <a href="candy.php">Candy</a>
+        <a href="specialtyshops.php">Specialty Shops</a>
+        <a href="deals.php">Deals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="myaccount.php">My Account</a>
         <a href="cart.php">Shopping Cart</a>
     </div>
 
@@ -41,7 +49,7 @@
         </div>
         <div class="column2" style="background-color:aliceblue">
             <div>
-                <h3>Breakfast & Cereal</h3>
+                <h3>Fresh Produce</h3>
                 <form class="search">
                     <input type="text" placeholder="Search..." name="search">
                     <button type="submit">Search<i class="fa fa-search"></i></button>
@@ -49,13 +57,16 @@
 
                 <div id="myBtnContainer" style="text-align:center; padding-top:15px;">
                     <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-                    <button class="btn" onclick="filterSelection('cereal')"> Cereal</button>
-                    <button class="btn" onclick="filterSelection('pancakes')"> Pancakes & Waffles</button>
-                    <button class="btn" onclick="filterSelection('breads')"> Breakfast Breads</button>
-                    <button class="btn" onclick="filterSelection('oatmeal')"> Oatmeal</button>
+                    <button class="btn" onclick="filterSelection('vegetables')"> Vegetables</button>
+                    <button class="btn" onclick="filterSelection('fruits')"> Fruits</button>
+                    <button class="btn" onclick="filterSelection('precut')"> Pre-cut Fruits</button>
+                    <button class="btn" onclick="filterSelection('flowers')"> Flowers</button>
+                    <button class="btn" onclick="filterSelection('salsa')"> Salsa and Dip</button>
+                    <button class="btn" onclick="filterSelection('season')"> Season Produce</button>
+                    <button class="btn" onclick="filterSelection('new')"> New Items</button>
                     <button class="btn" onclick="filterSelection('rollbacks')"> Rollbacks</button>
                 </div>
-
+                
                 <div class="rowCard" id="productCards">
                     
                 </div>
@@ -69,10 +80,14 @@
         <h4 id="date" style="padding-top: 20px"><script>formatDate();</script></h4>
         <h6>Anjali Massand AJM180009</h6>
     </footer>
-   
-    <script src="scripts/breakfast.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="scripts/freshProduce.js"></script>
     <script src="scripts/filter.js"></script>
     <script src="scripts/inventoryItems.js"></script>
+    
+    
+    
+    
 </body>
 
 </html>

@@ -1,3 +1,11 @@
+<?php
+include 'config.php';
+session_start();
+if (isset($_SESSION['username'])) {
+    echo "Hello, ", $_SESSION['username'];
+}
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="scripts/contactus.js"></script>
     
-    <title>Shopper's Stop: Snacks</title>
+    <title>Shopper's Stop: Candy</title>
     <header>
         <div class="top"> 
             <img src="images/groceries.jpeg">
@@ -20,19 +28,19 @@
     
 
     <div class="topnav">
-        <a href="index.html">Home</a>
-        <a href="freshproducts.html">Fresh Products</a>
-        <a href="frozen.html">Frozen</a>
-        <a href="pantry.html">Pantry</a>
-        <a href="breakfastcereal.html">Breakfast & Cereal</a>
-        <a href="baking.html">Baking</a>
-        <a href="snacks.html">Snacks</a>
-        <a href="candy.html">Candy</a>
-        <a href="specialtyshops.html">Specialty Shops</a>
-        <a href="deals.html">Deals</a>
-        <a href="aboutus.html">About Us</a>
-        <a href="contactus.html">Contact Us</a>
-        <a href="myaccount.html">My Account</a>
+        <a href="index.php">Home</a>
+        <a href="freshproducts.php">Fresh Products</a>
+        <a href="frozen.php">Frozen</a>
+        <a href="pantry.php">Pantry</a>
+        <a href="breakfastcereal.php">Breakfast & Cereal</a>
+        <a href="baking.php">Baking</a>
+        <a href="snacks.php">Snacks</a>
+        <a href="candy.php">Candy</a>
+        <a href="specialtyshops.php">Specialty Shops</a>
+        <a href="deals.php">Deals</a>
+        <a href="aboutus.php">About Us</a>
+        <a href="contactus.php">Contact Us</a>
+        <a href="myaccount.php">My Account</a>
         <a href="cart.php">Shopping Cart</a>
     </div>
 
@@ -43,7 +51,7 @@
         </div>
         <div class="column2" style="background-color:aliceblue">
             <div>
-                <h3>Snacks</h3>
+                <h3>Candy</h3>
                 <form class="search">
                     <input type="text" id="searchInput" placeholder="Search..." name="search" onkeyup="filterProducts()">
                     <button id="searchButton">Search<i class="fa fa-search"></i></button>
@@ -52,7 +60,7 @@
 
                 <div class="foodContainer" id="foodContainer">
                     <div class="rowCard" id="productCards">
-                       
+                        
                     </div>
                 </div>
             </div>
@@ -64,7 +72,7 @@
         <h4 id="date" style="padding-top: 20px"><script>formatDate();</script></h4>
         <h6>Anjali Massand AJM180009</h6>
     </footer>
-    <script src="scripts/snacks.js"></script>
+    <script src="scripts/candy.js"></script>
     <script src="scripts/search.js"></script>
     <script src="scripts/inventoryItems.js"></script>
 </body>

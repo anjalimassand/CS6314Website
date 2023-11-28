@@ -5,7 +5,7 @@
         "price": 3.5,
         "imageSrc": "images\/hummus.png",
         "mainCat": "Pantry",
-        "category": "spread"
+        "category": ["spread"]
     },
     {
         "name": "Butter",
@@ -13,7 +13,7 @@
         "price": 3.99,
         "imageSrc": "images\/butter.png",
         "mainCat": "Pantry",
-        "category": "spread"
+        "category": ["spread"]
     },
     {
         "name": "Ketchup",
@@ -54,7 +54,7 @@
         "price": 1.5,
         "imageSrc": "images\/rotini.png",
         "mainCat": "Pantry",
-        "category": "pasta"
+        "category": ["pasta"]
     },
     {
         "name": "Canned Green Beans",

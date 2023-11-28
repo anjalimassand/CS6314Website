@@ -5,7 +5,7 @@
         "price": 4.99,
         "imageSrc": "images\/cheerios.jpeg",
         "mainCat": "Breakfast",
-        "category": "cereal"
+        "category": ["cereal"]
     },
     {
         "name": "Crunch Berries",
@@ -13,7 +13,7 @@
         "price": 3.99,
         "imageSrc": "images\/crunchberries.png",
         "mainCat": "Breakfast",
-        "category": "cereal"
+        "category": ["cereal"]
     },
     {
         "name": "Raisin Bran",
@@ -32,7 +32,7 @@
         "price": 4.99,
         "imageSrc": "images\/pancakemix.png",
         "mainCat": "Breakfast",
-        "category": "pancakes"
+        "category": ["pancakes"]
     },
     {
         "name": "Waffle Mix",
@@ -40,7 +40,7 @@
         "price": 2.89,
         "imageSrc": "images\/wafflemix.png",
         "mainCat": "Breakfast",
-        "category": "pancakes"
+        "category": ["pancakes"]
     },
     {
         "name": "Maple Syrup",
@@ -48,7 +48,7 @@
         "price": 6.49,
         "imageSrc": "images\/maplesyrup.png",
         "mainCat": "Breakfast",
-        "category": "pancakes"
+        "category": ["pancakes"]
     },
     {
         "name": "Strawberry Oatmeal",
@@ -87,7 +87,7 @@
         "price": 4.99,
         "imageSrc": "images\/croissant.png",
         "mainCat": "Breakfast",
-        "category": "breads"
+        "category": ["breads"]
     },
     {
         "name": "Bagels",
@@ -95,7 +95,7 @@
         "price": 4.79,
         "imageSrc": "images\/bagel.png",
         "mainCat": "Breakfast",
-        "category": "breads"
+        "category": ["breads"]
     },
     {
         "name": "Muffins",
