@@ -1,3 +1,4 @@
+/*
 $(document).ready(function() {
     // Update the path to the JSON file
     const jsonFilePath = "json/baking.json";
@@ -28,3 +29,7 @@ $(document).ready(function() {
         console.error("Error fetching JSON data:", error);
     });
 });
+
+
+
+*/

@@ -80,6 +80,154 @@ function updateItemPrice(itemName) {
     }
 }
 
+function addToCart(itemName, itemQuantityInventory) {
+    const outOfStockMessage = document.getElementById(`${itemName.toLowerCase()}-out-of-stock`);
+    const quantityInput = document.getElementById(`${itemName.toLowerCase()}-quantity`);
+    const added = document.getElementById('added');
+    
+    const inventory = JSON.parse(sessionStorage.getItem('inventoryList'));
+    const cart = JSON.parse(sessionStorage.getItem('cartData')) || [];
+
+    // Find the product in the inventory
+    const product = inventory.find(product => product.name.toLowerCase() === itemName.toLowerCase());
+
+    if (!product) {
+        // Product not found in the inventory
+        return;
+    }
+
+    const availableQuantity = itemQuantityInventory;
+    const quantity = parseInt(quantityInput.value);
+
+    if (quantity <= availableQuantity) {
+        // Update the item price based on the selected quantity
+        updateItemPrice(itemName);
+
+        // Reduce available quantity by the selected quantity
+        product.quantity -= quantity;
+        sessionStorage.setItem('inventoryList', JSON.stringify(inventory));
+
+        // Update cart
+        const cartItem = {
+            name: itemName,
+            quantity: quantity,
+            price: product.price
+        };
+        cart.push(cartItem);
+        sessionStorage.setItem('cartData', JSON.stringify(cart));
+
+        /*
+        // Send an AJAX request to update the server-side cart
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'updateCart.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        const requestData = {
+            itemName: itemName,
+            quantity: quantity
+        };
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // Successful response from the server
+                    console.log(xhr.responseText);
+                } else {
+                    // Handle errors
+                    console.error('Error updating cart:', xhr.responseText);
+                }
+            }
+        };
+
+        xhr.send(JSON.stringify(requestData));
+*/
+        quantityInput.value = 1;
+
+        // outOfStockMessage.style.display = 'none';
+        // added.textContent = `${quantity} ${itemName} added!`;
+        // added.style.display = 'block';
+        var createNew = true;
+
+        alert(quantity + " " + itemName + " added to cart.");
+        console.log(cart.length);
+        if (cart.length == 1) {
+            console.log("Creating new TransactionID");
+            updateDatabase(itemName, quantity, product.price, createNew);
+        } else {
+            createNew = false;
+            console.log("Adding to existing TransactionID")
+            updateDatabase(itemName, quantity, product.price, createNew);
+        }
+
+        updateCartDatabase(itemName, quantity, product.price);
+
+    
+    } else {
+        // Display out of stock message
+        // added.style.display = 'none';
+        // outOfStockMessage.textContent = `Only ${availableQuantity} available`;
+        // outOfStockMessage.style.display = 'block';
+     
+        alert(itemName + " out of stock. Limited to " + availableQuantity + ".");
+    }
+}
+
+function updateDatabase(itemName, quantity, price, createNew) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'updateTransaction.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    const requestData = {
+        itemName: itemName,
+        quantity: quantity,
+        price: price,
+        createNew: createNew,
+    };
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Successful response from the server
+                console.log(xhr.responseText);
+            } else {
+                // Handle errors
+                console.error('Error updating cart:', xhr.responseText);
+            }
+        }
+    };
+
+    xhr.send(JSON.stringify(requestData));
+}
+
+function updateCartDatabase(itemName, quantity, price) {
+    console.log("updateCartDB");
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'updateCartDB.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    const requestData = {
+        itemName: itemName,
+        quantity: quantity,
+        price: price,
+    };
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Successful response from the server
+                console.log(xhr.responseText);
+            } else {
+                // Handle errors
+                console.error('Error updating cart:', xhr.responseText);
+            }
+        }
+    };
+
+    xhr.send(JSON.stringify(requestData));
+}
+
+
+/*
 function addToCart(itemName) {
     const outOfStockMessage = document.getElementById(`${itemName.toLowerCase()}-out-of-stock`);
     const quantityInput = document.getElementById(`${itemName.toLowerCase()}-quantity`);
@@ -122,6 +270,30 @@ function addToCart(itemName) {
         cart.push(cartItem);
         sessionStorage.setItem('cartData', JSON.stringify(cart));
 
+
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'updateCart.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+
+        const requestData = {
+            itemName: itemName,
+            quantity: quantity
+        };
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    // Successful response from the server
+                    console.log(xhr.responseText);
+                } else {
+                    // Handle errors
+                    console.error('Error updating cart:', xhr.responseText);
+                }
+            }
+        };
+
+        xhr.send(JSON.stringify(requestData));
+
         quantityInput.value = 1;
 
         outOfStockMessage.style.display = "none";
@@ -133,8 +305,10 @@ function addToCart(itemName) {
         outOfStockMessage.textContent = availableQuantity + " available";
         outOfStockMessage.style.display = "block";
     }
-}
 
+
+}
+*/
 
 /* 
 if (!sessionStorage.getItem('inventoryList')) {

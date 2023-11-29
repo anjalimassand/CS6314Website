@@ -49,12 +49,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $quantity = $product->quantity;
                     $price = $product->price;
                     $mainCat = $product->mainCat;
+                    $imageSrc = $product->imageSrc;
                     $subCatElement = $product->category;
                     $subCat = (string) $subCatElement;
 
                     // Insert data into the inventory table
-                    $sql = "INSERT INTO inventory (Name, Category, Subcategory, UnitPrice, QuantityInInventory)
-                            VALUES ('$name', '$mainCat', '$subCat', '$price', '$quantity')
+                    $sql = "INSERT INTO inventory (Name, Category, Subcategory, UnitPrice, QuantityInInventory, ImageSrc)
+                            VALUES ('$name', '$mainCat', '$subCat', '$price', '$quantity', '$imageSrc')
                             ON DUPLICATE KEY UPDATE QuantityInInventory = $quantity";
 
                     $conn->query($sql);
@@ -84,8 +85,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
 
                     // Insert data into the inventory table
-                    $sql = "INSERT INTO inventory (Name, Category, Subcategory, UnitPrice, QuantityInInventory)
-                            VALUES ('$name', '$mainCat', '$subCat', '$price', '$quantity')
+                    $sql = "INSERT INTO inventory (Name, Category, Subcategory, UnitPrice, QuantityInInventory, ImageSrc)
+                            VALUES ('$name', '$mainCat', '$subCat', '$price', '$quantity', '$imageSrc')
                             ON DUPLICATE KEY UPDATE QuantityInInventory = $quantity";
 
 

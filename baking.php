@@ -4,21 +4,30 @@ session_start();
 if (isset($_SESSION['username'])) {
     echo "Hello, ", $_SESSION['username'];
 }
+
+if (isset($_SESSION['TransactionID'])) {
+    // Retrieve the CustomerID
+    $transactionID = $_SESSION['TransactionID'];
+
+    // Now $customerID contains the current user's CustomerID
+    echo "Hello, ", $_SESSION['TransactionID'];
+}
+
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-    
+
     <title>Shopper's Stop: Frozen</title>
     <header>
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="scripts/contactus.js"></script>
-        <div class="top"> 
+        <div class="top">
             <img src="images/groceries.jpeg">
-            <h1>Shopper's Stop</h1> 
+            <h1>Shopper's Stop</h1>
         </div>
-        
+
     </header>
 </head>
 
@@ -42,28 +51,56 @@ if (isset($_SESSION['username'])) {
     </div>
 
     <div class="row">
-        <div class="column" style="background-color:rgb(222, 221, 226)">  
+        <div class="column" style="background-color:rgb(222, 221, 226)">
             <h3>Click 'Shopping Cart' tab for cart details.</h3>
-            <h5 id = "added"></h5>
-            
+            <h5 id="added"></h5>
+
         </div>
         <div class="column2" style="background-color:aliceblue">
             <div>
                 <h3>Baking</h3>
                 <div class="rowCard" id="productCards">
-                    
+                    <?php
+                    // Query to select data from the Inventory table
+                    $sql = "SELECT ItemNumber, Name, Category, Subcategory, UnitPrice, QuantityInInventory, ImageSrc FROM Inventory WHERE Category = 'Baking'";
+                    $result = $conn->query($sql);
+
+                    // Check if there are rows in the result
+                    if ($result->num_rows > 0) {
+                        // Iterate through each row
+                        while ($row = $result->fetch_assoc()) {
+                            // Output HTML based on each row's data
+                            echo '<div class="columnCard">';
+                            echo '<div class="card">';
+                            echo '<img src="' . $row['ImageSrc'] . '" alt="Avatar" width="100%" height="180">';
+                            echo '<div class="container">';
+                            echo '<h4><b>' . $row['Name'] . '</b></h4>';
+                            echo '<p><strong>$' . number_format($row['UnitPrice'], 2) . '</strong></p>';
+                            echo '<input type="number" class="center" id="' . strtolower($row['Name']) . '-quantity" name="' . strtolower($row['Name']) . '-quantity" min="1" max="10" value="1">';
+                            echo '<button type="button" class="center" onclick="addToCart(\'' . $row['Name'] . '\', \'' . $row['QuantityInInventory'] . '\')">Add to Cart</button>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo "No items found in the inventory.";
+                    }
+                    ?>
+
                 </div>
-                
+
             </div>
-            
+
         </div>
     </div>
 
     <footer>
-        <h4 id="date" style="padding-top: 20px"><script>formatDate();</script></h4>
+        <h4 id="date" style="padding-top: 20px">
+            <script>formatDate();</script>
+        </h4>
         <h6>Anjali Massand AJM180009</h6>
     </footer>
-   
+
     <script src="scripts/baking.js"></script>
     <script src="scripts/inventoryItems.js"></script>
 </body>

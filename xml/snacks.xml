@@ -6,6 +6,7 @@
         <price>3.49</price>
         <imageSrc>images/oreo.png</imageSrc>
         <mainCat>Snacks</mainCat>
+        <category>snacks</category>
     </product>
     <product>
         <name>Lays Chips</name>
@@ -13,6 +14,7 @@
         <price>3.99</price>
         <imageSrc>images/lays.jpeg</imageSrc>
         <mainCat>Snacks</mainCat>
+        <category>snacks</category>
     </product>
     <product>
         <name>Animal Crackers</name>
@@ -20,6 +22,7 @@
         <price>3.59</price>
         <imageSrc>images/crackers.png</imageSrc>
         <mainCat>Snacks</mainCat>
+        <category>snacks</category>
     </product>
     <product>
         <name>Pretzel Crisps</name>
@@ -27,6 +30,7 @@
         <price>3.99</price>
         <imageSrc>images/pretzel.png</imageSrc>
         <mainCat>Snacks</mainCat>
+        <category>snacks</category>
     </product>
     <product>
         <name>KitKat Minis</name>
@@ -34,6 +38,7 @@
         <price>7.00</price>
         <imageSrc>images/kitkat.png</imageSrc>
         <mainCat>Snacks</mainCat>
+        <category>snacks</category>
     </product>
  
 </products>

@@ -83,7 +83,7 @@ if (isset($_SESSION['username'])) {
                             // Display the inventory table content in a table or format of your choice
                             echo "<h2>All Inventory:</h2>";
                             echo "<table border='1'>";
-                            echo "<tr><th>Item Number</th><th>Name</th><th>Category</th><th>Subcategory</th><th>Unit Price</th><th>Quantity in Inventory</th></tr>";
+                            echo "<tr><th>Item Number</th><th>Name</th><th>Category</th><th>Subcategory</th><th>Unit Price</th><th>Quantity in Inventory</th><th>Image Source</th></tr>";
                             while ($row = $result->fetch_assoc()) {
                                 echo "<tr>";
                                 echo "<td>" . $row["ItemNumber"] . "</td>";
@@ -92,6 +92,7 @@ if (isset($_SESSION['username'])) {
                                 echo "<td>" . $row["Subcategory"] . "</td>";
                                 echo "<td>" . $row["UnitPrice"] . "</td>";
                                 echo "<td>" . $row["QuantityInInventory"] . "</td>";
+                                echo "<td>" . $row["ImageSrc"] . "</td>";
                                 echo "</tr>";
                             }
                             echo "</table>";
@@ -109,7 +110,7 @@ if (isset($_SESSION['username'])) {
                         if ($result->num_rows > 0) {
                             echo "<h2>Items Low in Inventory:</h2>";
                             echo "<table border='1'>";
-                            echo "<tr><th>Item Number</th><th>Name</th><th>Category</th><th>Subcategory</th><th>Unit Price</th><th>Quantity in Inventory</th></tr>";
+                            echo "<tr><th>Item Number</th><th>Name</th><th>Category</th><th>Subcategory</th><th>Unit Price</th><th>Quantity in Inventory</th><th>Image Source</th></tr>";
 
                             // Output data of each row
                             while ($row = $result->fetch_assoc()) {
@@ -120,6 +121,7 @@ if (isset($_SESSION['username'])) {
                                 echo "<td>" . $row["Subcategory"] . "</td>";
                                 echo "<td>" . $row["UnitPrice"] . "</td>";
                                 echo "<td>" . $row["QuantityInInventory"] . "</td>";
+                                echo "<td>" . $row["ImageSrc"] . "</td>";
                                 echo "</tr>";
                             }
 

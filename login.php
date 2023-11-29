@@ -1,4 +1,5 @@
 <?php
+include 'config.php';
 session_start(); // Start the session
 
 // Check if the form is submitted
@@ -19,6 +20,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["username"] = $username;
         header("Location: myaccount.php");
         echo "Invalid username or password";
+
+
+        // Fetch CustomerID based on the username
+        $sql = "SELECT CustomerID FROM Users WHERE UserName = '$username' LIMIT 1";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // Assuming that each username is unique, so there should be only one row
+            $row = $result->fetch_assoc();
+            $customerID = $row["CustomerID"];
+
+            $_SESSION["CustomerID"] = $customerID;
+            exit();
+        } else {
+            echo "Invalid username or password";
+        }
+
+        
     }
 }
 
