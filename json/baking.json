@@ -5,15 +5,19 @@
         "price": 3.99,
         "imageSrc": "images\/pumpkinmix.png",
         "mainCat": "Baking",
-        "category": ["baking"]
+        "category": [
+            "baking"
+        ]
     },
     {
         "name": "Pie Crust",
-        "quantity": 10,
+        "quantity": 9,
         "price": 3.49,
         "imageSrc": "images\/crust.png",
         "mainCat": "Baking",
-        "category": ["baking"]
+        "category": [
+            "baking"
+        ]
     },
     {
         "name": "Pie Crusts",
@@ -21,7 +25,9 @@
         "price": 5.29,
         "imageSrc": "images\/crust2.png",
         "mainCat": "Baking",
-        "category": ["baking"]
+        "category": [
+            "baking"
+        ]
     },
     {
         "name": "Pan",
@@ -29,15 +35,19 @@
         "price": 7.99,
         "imageSrc": "images\/pan.png",
         "mainCat": "Baking",
-        "category": ["baking"]
+        "category": [
+            "baking"
+        ]
     },
     {
         "name": "Circular Pan",
-        "quantity": 10,
+        "quantity": 9,
         "price": 4.99,
         "imageSrc": "images\/pan2.png",
         "mainCat": "Baking",
-        "category": ["baking"]
+        "category": [
+            "baking"
+        ]
     },
     {
         "name": "Pudding\/Pie Filling Mix",
@@ -45,6 +55,8 @@
         "price": 1.67,
         "imageSrc": "images\/pudding.png",
         "mainCat": "Baking",
-        "category": ["baking"]
+        "category": [
+            "baking"
+        ]
     }
 ]

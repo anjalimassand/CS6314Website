@@ -4,6 +4,7 @@ session_start();
 if (isset($_SESSION['username'])) {
     echo "Hello, ", $_SESSION['username'];
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -66,18 +67,25 @@ if (isset($_SESSION['username'])) {
                             //exit(); // Stop further execution of the script
                         }
                     ?>
+                    
+                    
                     <table id="cartTable" style="width:100%">
                         <thead>
                             <tr>
                                 <th style="text-align:left">Item</th>
                                 <th>Quantity</th>
                                 <th>Price</th>
-                            </tr>
+                            </tr> 
+                            
+
                         </thead>
                         <tbody>
             
                         </tbody>
                     </table>
+                    <p></p>
+                    <?php include 'displayCart.php'; ?>
+                    <p></p>
                     <button type="button" class="clearButton">Clear Cart</button>
                     <button type="button" class="checkoutButton">Checkout</button>
 

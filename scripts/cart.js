@@ -54,8 +54,14 @@ $(document).ready(function() {
     }
 
     $('.checkoutButton').on('click', function() {
+        const cartData = JSON.parse(sessionStorage.getItem('cartData')) || [];
+
+        if (cartData.length === 0) {
+            alert("Cannot checkout empty cart.");
+            return;
+        }
         // Retrieve cart data from session storage
-        const cartData = JSON.parse(sessionStorage.getItem('cartData'));
+    //    const cartData = JSON.parse(sessionStorage.getItem('cartData'));
 
         // Check if cartData exists
         if (cartData) {
@@ -78,9 +84,18 @@ $(document).ready(function() {
         sessionStorage.removeItem('cartData');
         $('#cartTable tbody').empty();
 
+        // change status to shopped
+        changeTransactionShopped();
+        changeCartShopped();
     });
 
     $('.clearButton').on('click', function() {
+        const cartData = JSON.parse(sessionStorage.getItem('cartData')) || [];
+
+        if (cartData.length === 0) {
+            alert("Cart is already empty.");
+            return;
+        }
         sessionStorage.removeItem('cartData');
 
         // Retrieve inventoryList data from session storage
@@ -106,7 +121,14 @@ $(document).ready(function() {
         }
 
         $('#cartTable tbody').empty();
-        
+
+        // add items in cart data back to inventory db
+        addBackInventory();
+        // change transaction status to cancelled
+        cancelTransaction();
+        // change cart status to cancelled
+        cancelCart();
+
     });
     
 });
@@ -131,3 +153,129 @@ function groupCartItems(cartData) {
     return groupedCart;
 }
 
+// Function to cancel transaction
+function cancelTransaction() {
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Configure it to send a POST request to your PHP script
+    xhr.open('POST', 'cancelTransaction.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    // Set up a callback function to handle the response from the server
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Successful response from the server
+                console.log(xhr.responseText);
+            } else {
+                // Handle errors
+                console.error('Error cancelling transaction status:', xhr.responseText);
+            }
+        }
+    };
+
+    // Send the request without any request data
+    xhr.send();
+}
+
+// Function to cancel transaction
+function cancelCart() {
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Configure it to send a POST request to your PHP script
+    xhr.open('POST', 'cancelCartStatus.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    // Set up a callback function to handle the response from the server
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Successful response from the server
+                console.log(xhr.responseText);
+            } else {
+                // Handle errors
+                console.error('Error cancelling cart status:', xhr.responseText);
+            }
+        }
+    };
+
+    // Send the request without any request data
+    xhr.send();
+}
+
+function changeTransactionShopped() {
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Configure it to send a POST request to your PHP script
+    xhr.open('POST', 'shoppedTransaction.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    // Set up a callback function to handle the response from the server
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Successful response from the server
+                console.log(xhr.responseText);
+            } else {
+                // Handle errors
+                console.error('Error updating status to shopped (transaction):', xhr.responseText);
+            }
+        }
+    };
+
+    // Send the request without any request data
+    xhr.send();
+}
+
+function changeCartShopped() {
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Configure it to send a POST request to your PHP script
+    xhr.open('POST', 'shoppedCart.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    // Set up a callback function to handle the response from the server
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Successful response from the server
+                console.log(xhr.responseText);
+            } else {
+                // Handle errors
+                console.error('Error updating status to shopped (cart):', xhr.responseText);
+            }
+        }
+    };
+
+    // Send the request without any request data
+    xhr.send();
+}
+
+function addBackInventory() {
+    // Create an XMLHttpRequest object
+    const xhr = new XMLHttpRequest();
+
+    // Configure it to send a POST request to your PHP script
+    xhr.open('POST', 'cancelInventory.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    // Set up a callback function to handle the response from the server
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                // Successful response from the server
+                console.log(xhr.responseText);
+            } else {
+                // Handle errors
+                console.error('Error adding back inventory:', xhr.responseText);
+            }
+        }
+    };
+
+    // Send the request without any request data
+    xhr.send();
+}

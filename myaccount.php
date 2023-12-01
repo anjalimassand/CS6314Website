@@ -164,7 +164,7 @@ if (isset($_SESSION['username'])) {
                                 if ($conn->query($sql) === TRUE) {
                                     echo '<p style="color: green;">Item updated successfully!</p>';
                                 } else {
-                                    echo '<p style="color: red;">Unable to update item: ' . $conn->error . '</p>';
+                                    echo '<p style="color: red;">Unable to update item: ' . '</p>';
                                 }
                             } else {
                                 echo '<p style="color: red;">Invalid input. Please enter valid values for item number, unit price, and quantity.</p>';
@@ -222,9 +222,11 @@ if (isset($_SESSION['username'])) {
                         //         echo "<p>Invalid date format. Please enter a date in the format YYYY-MM-DD.</p>";
                         //     }
                         // }
-                
                     }
-
+                    // } else {
+                    //     include 'displayUserTable.php';
+                    // }
+                
                 } else {
                     // User is not logged in, show login form
                     echo '<h3>My Account</h3>';
@@ -246,6 +248,48 @@ if (isset($_SESSION['username'])) {
                     echo '<h5>Don\'t have an account? <a href="register.php">Register Now</a></h5>';
                 }
                 ?>
+
+                <form method="post" action="displayUserTable.php">
+                    <label for="filterType">Select Filter:</label>
+                    <select name="filterType" id="filterType" onchange="showInput()">
+                        <option value="month">Transactions in a Specific Month</option>
+                        <option value="last3months">Last 3 Months</option>
+                        <option value="year">Transactions in a Specific Year</option>
+                    </select>
+
+                    <!-- Additional inputs based on the selected filter type -->
+                    <div id="monthInput" style="display: none;">
+                        <label for="selectedMonth">Select Month:</label>
+                        <input type="number" name="selectedMonth" min="1" max="12">
+                    </div>
+
+                    <div id="yearInput" style="display: none;">
+                        <label for="selectedYear">Select Year:</label>
+                        <input type="number" name="selectedYear" min="2000" max="<?php echo date('Y'); ?>">
+                    </div>
+
+                    <input type="submit" name="generateButton" value="Generate">
+                </form>
+
+                <script>
+                    // JavaScript function to show/hide input based on filter type
+                    function showInput() {
+                        var filterType = document.getElementById("filterType").value;
+                        var monthInput = document.getElementById("monthInput");
+                        var yearInput = document.getElementById("yearInput");
+
+                        // Hide all inputs initially
+                        monthInput.style.display = "none";
+                        yearInput.style.display = "none";
+
+                        // Show input based on filter type
+                        if (filterType === "month") {
+                            monthInput.style.display = "block";
+                        } else if (filterType === "year") {
+                            yearInput.style.display = "block";
+                        }
+                    }
+                </script>
                 <!--
                 <h3>My Account</h3>
                 <form class="login" method="post" action="login.php">
@@ -273,6 +317,8 @@ if (isset($_SESSION['username'])) {
                     <input type="submit" class="logoutButton" value="Logout">
                 </form>
             -->
+
+
             </div>
 
         </div>

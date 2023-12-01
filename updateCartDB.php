@@ -11,6 +11,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $itemName = mysqli_real_escape_string($conn, $requestData['itemName']);
     $quantity = intval($requestData['quantity']);
 
+    // Your SQL query to update the database
+    $updateInventoryQuery = "UPDATE Inventory SET QuantityInInventory = QuantityInInventory - $quantity WHERE Name = '$itemName'";
+
+    // Perform the query
+    if (mysqli_query($conn, $updateInventoryQuery)) {
+        // Query executed successfully
+
+        // You might want to log the transaction or update the cart and transactions table here
+
+        echo "Cart updated successfully";
+    } else {
+        // Error in query execution
+        echo "Error updating cart: " . mysqli_error($conn);
+    }
+
 
     $itemNum = "SELECT ItemNumber FROM Inventory WHERE Name = '$itemName' LIMIT 1";
     $result = $conn->query($itemNum);
