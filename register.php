@@ -103,6 +103,11 @@
                             <input type="text" class="form-control" name="address" id="address" required>
                         </div>
 
+                        <div class="form-group">
+                            <label for="zipcode">Zipcode:</label>
+                            <input type="text" class="form-control" name="zipcode" id="zipcode" required>
+                        </div>
+
                         <div class="invalid-feedback">
                             <h6 id="8Message"></h6>
                             <h6 id="pwdMessage"></h6>
@@ -147,6 +152,7 @@
                         $phoneNumber = $_POST['number'];
                         $email = $_POST['email'];
                         $address = $_POST['address'];
+                        $zipcode = $_POST['zipcode'];
                     
                         // SQL statement to insert data into the Users table
                         $sql = "INSERT INTO Users (UserName, Password)
@@ -157,17 +163,17 @@
                             $customerID = $conn->insert_id;
 
                             // Use the CustomerID in the SQL statement for Customers table
-                            $sql2 = "INSERT INTO Customers (CustomerID, FirstName, LastName, Age, PhoneNumber, Email, Address)
-                                    VALUES ('$customerID', '$firstName', '$lastName', '$age', '$phoneNumber', '$email', '$address')";
+                            $sql2 = "INSERT INTO Customers (CustomerID, FirstName, LastName, Age, PhoneNumber, Email, Address, Zipcode)
+                                    VALUES ('$customerID', '$firstName', '$lastName', '$age', '$phoneNumber', '$email', '$address', '$zipcode')";
 
                             // Execute the SQL statement for Customers table
                             if ($conn->query($sql2) === TRUE) {
                                 echo '<script>displaySuccessMessage();</script>';
                             } else {
-                                echo "Error: " . $sql2 . "<br>" . $conn->error;
+                                echo "Error: " . $sql2 . "<br>" ;
                             }
                         } else {
-                            echo "Error: " . $sql . "<br>" . $conn->error;
+                            echo "Error: " . $sql . "<br>";
                         }
                     }
                     

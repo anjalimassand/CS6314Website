@@ -1,6 +1,10 @@
 <?php
 include 'config.php'; // Include your database configuration file
 
+if(!isset($_SESSION['TransactionID'])){
+    return;
+}
+
 // Sanitize and validate data
 $customerID = $_SESSION['CustomerID'];
 $transactionID = $_SESSION['TransactionID'];

@@ -1,6 +1,8 @@
 <?php
 include 'config.php';
- session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 
 $customerID = $_SESSION['CustomerID'];
 // Handle form submissions
@@ -99,11 +101,12 @@ function displayFilteredTransactions($conn, $customerID, $filterCondition)
         }
 
         echo "</table>";
+        echo "Please use the back arrow in the header to go back to the MyAccount Page!";
     } else {
         echo "<p>No transactions found for the selected filter criteria.</p>";
+        echo "Please use the back arrow in the header to go back to the MyAccount Page!";
     }
 }
-
 // // Function to cancel transaction and update inventory
 // function cancelTransaction($conn, $customerID)
 // {

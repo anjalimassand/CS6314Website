@@ -87,6 +87,8 @@ $(document).ready(function () {
         // change status to shopped
         changeTransactionShopped();
         changeCartShopped();
+
+        location.reload();
     });
 
     $('.clearButton').on('click', function () {
@@ -128,6 +130,8 @@ $(document).ready(function () {
         cancelTransaction();
         // change cart status to cancelled
         cancelCart();
+
+        location.reload();
     });
 
 });

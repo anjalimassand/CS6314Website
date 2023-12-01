@@ -10,7 +10,7 @@
     </product>
     <product>
         <name>Lays Chips</name>
-        <quantity>10</quantity>
+        <quantity>9</quantity>
         <price>3.99</price>
         <imageSrc>images/lays.jpeg</imageSrc>
         <mainCat>Snacks</mainCat>
@@ -18,7 +18,7 @@
     </product>
     <product>
         <name>Animal Crackers</name>
-        <quantity>10</quantity>
+        <quantity>8</quantity>
         <price>3.59</price>
         <imageSrc>images/crackers.png</imageSrc>
         <mainCat>Snacks</mainCat>
