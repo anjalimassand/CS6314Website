@@ -1,4 +1,4 @@
-$(document).ready(function () {
+/*$(document).ready(function () {
     // Update the path to the JSON file
     const jsonFilePath = "json/breakfast.json";
 
@@ -34,4 +34,4 @@ $(document).ready(function () {
         }
     });
 });
-
+*/

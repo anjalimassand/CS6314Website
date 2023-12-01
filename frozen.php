@@ -67,7 +67,32 @@ if (isset($_SESSION['username'])) {
                 </div>
 
                 <div class="rowCard" id="productCards">
-                    
+                <?php
+                    // Query to select data from the Inventory table
+                    $sql = "SELECT ItemNumber, Name, Category, Subcategory, UnitPrice, QuantityInInventory, ImageSrc FROM Inventory WHERE Category = 'Frozen'";
+                    $result = $conn->query($sql);
+
+                    // Check if there are rows in the result
+                    if ($result->num_rows > 0) {
+                        // Iterate through each row
+                        while ($row = $result->fetch_assoc()) {
+                            // Output HTML based on each row's data
+                            echo '<div class="columnCard filterDiv show" data-category="' . strtolower($row['Subcategory']) . '">';;
+                            echo '<div class="card">';
+                            echo '<img src="' . $row['ImageSrc'] . '" alt="Avatar" width="100%" height="180">';
+                            echo '<div class="container">';
+                            echo '<h4><b>' . $row['Name'] . '</b></h4>';
+                            echo '<p><strong>$' . number_format($row['UnitPrice'], 2) . '</strong></p>';
+                            echo '<input type="number" class="center" id="' . strtolower($row['Name']) . '-quantity" name="' . strtolower($row['Name']) . '-quantity" min="1" max="10" value="1">';
+                            echo '<button type="button" class="center" onclick="addToCart(\'' . $row['Name'] . '\', \'' . $row['QuantityInInventory'] . '\')">Add to Cart</button>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    } else {
+                        echo "No items found in the inventory.";
+                    }
+                    ?>
                 </div>
                 
             </div>

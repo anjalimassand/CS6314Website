@@ -5,12 +5,8 @@ if (isset($_SESSION['username'])) {
     echo "Hello, ", $_SESSION['username'];
 }
 
-if (isset($_SESSION['TransactionID'])) {
-    // Retrieve the CustomerID
-    $transactionID = $_SESSION['TransactionID'];
-
-    // Now $customerID contains the current user's CustomerID
-    echo "Hello, ", $_SESSION['TransactionID'];
+if (isset($_SESSION['CustomerID'])) {
+    echo "Hello, ", $_SESSION['CustomerID'];
 }
 
 ?>

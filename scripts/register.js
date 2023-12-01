@@ -1,4 +1,5 @@
 function validateForm() {
+
     var flag = true;
     var letters = /^[A-Za-z]+$/;
 
@@ -114,6 +115,3 @@ function displaySuccessMessage() {
     var successDiv = document.getElementById("successMessage");
     successDiv.style.display = "block";
 }
-
-
-  

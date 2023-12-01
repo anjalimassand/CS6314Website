@@ -222,11 +222,11 @@ if (isset($_SESSION['username'])) {
                         //         echo "<p>Invalid date format. Please enter a date in the format YYYY-MM-DD.</p>";
                         //     }
                         // }
-                    }
-                    // } else {
-                    //     include 'displayUserTable.php';
-                    // }
                 
+                    } else {
+                        include 'displayUserTable.php';
+                    }
+
                 } else {
                     // User is not logged in, show login form
                     echo '<h3>My Account</h3>';
@@ -249,6 +249,7 @@ if (isset($_SESSION['username'])) {
                 }
                 ?>
 
+                <p></p>
                 <form method="post" action="displayUserTable.php">
                     <label for="filterType">Select Filter:</label>
                     <select name="filterType" id="filterType" onchange="showInput()">
@@ -256,8 +257,6 @@ if (isset($_SESSION['username'])) {
                         <option value="last3months">Last 3 Months</option>
                         <option value="year">Transactions in a Specific Year</option>
                     </select>
-
-                    <!-- Additional inputs based on the selected filter type -->
                     <div id="monthInput" style="display: none;">
                         <label for="selectedMonth">Select Month:</label>
                         <input type="number" name="selectedMonth" min="1" max="12">
@@ -265,7 +264,7 @@ if (isset($_SESSION['username'])) {
 
                     <div id="yearInput" style="display: none;">
                         <label for="selectedYear">Select Year:</label>
-                        <input type="number" name="selectedYear" min="2000" max="<?php echo date('Y'); ?>">
+                        <input type="number" name="selectedYear" min="2000" max="">
                     </div>
 
                     <input type="submit" name="generateButton" value="Generate">

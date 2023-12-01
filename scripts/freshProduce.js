@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+/*document.addEventListener("DOMContentLoaded", function() {
 
     // Update the path to the XML file
     const xmlFilePath = "xml/freshproduce.xml";
@@ -56,3 +56,4 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Error fetching XML data:", error));
 });
+*/

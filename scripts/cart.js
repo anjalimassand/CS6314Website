@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
     // Retrieve cart data from session storage
     const cartData = JSON.parse(sessionStorage.getItem('cartData'));
     let subtotal = 0;
@@ -8,7 +8,7 @@ $(document).ready(function() {
 
         const groupedCart = groupCartItems(cartData);
 
-        $.each(groupedCart, function(index, item) {
+        $.each(groupedCart, function (index, item) {
             const row = cartTable[0].insertRow(-1);
             const nameCell = row.insertCell(0);
             const quantityCell = row.insertCell(1);
@@ -27,7 +27,7 @@ $(document).ready(function() {
             subtotal += itemTotal;
         });
 
-        const taxRate = 0.08; 
+        const taxRate = 0.08;
         const tax = subtotal * taxRate;
 
         // Calculate total price
@@ -53,7 +53,7 @@ $(document).ready(function() {
         $(totalAmountCell).addClass('centerColumn');
     }
 
-    $('.checkoutButton').on('click', function() {
+    $('.checkoutButton').on('click', function () {
         const cartData = JSON.parse(sessionStorage.getItem('cartData')) || [];
 
         if (cartData.length === 0) {
@@ -61,19 +61,19 @@ $(document).ready(function() {
             return;
         }
         // Retrieve cart data from session storage
-    //    const cartData = JSON.parse(sessionStorage.getItem('cartData'));
+        //    const cartData = JSON.parse(sessionStorage.getItem('cartData'));
 
         // Check if cartData exists
         if (cartData) {
             // Send cartData to the server using AJAX
             $.ajax({
                 type: 'POST',
-                url: 'cart.php', 
+                url: 'cart.php',
                 data: { cartData: JSON.stringify(cartData) },
-                success: function(response) {
+                success: function (response) {
                     console.log('Cart data sent successfully.');
                 },
-                error: function(error) {
+                error: function (error) {
                     console.error('Error sending cart data:', error);
                 }
             });
@@ -89,7 +89,7 @@ $(document).ready(function() {
         changeCartShopped();
     });
 
-    $('.clearButton').on('click', function() {
+    $('.clearButton').on('click', function () {
         const cartData = JSON.parse(sessionStorage.getItem('cartData')) || [];
 
         if (cartData.length === 0) {
@@ -103,17 +103,17 @@ $(document).ready(function() {
 
         if (inventoryList) {
             // Add the values back to inventoryList
-            $.each(cartData, function(index, item) {
-                const existingItem = inventoryList.find(function(inventoryItem) {
-                   // console.log(inventoryItem.name);
-                   // console.log(item.name);
+            $.each(cartData, function (index, item) {
+                const existingItem = inventoryList.find(function (inventoryItem) {
+                    // console.log(inventoryItem.name);
+                    // console.log(item.name);
                     return inventoryItem.name === item.name.toLowerCase();
                 });
 
                 if (existingItem) {
                     existingItem.quantity += item.quantity;
                     console.log(existingItem.quantity);
-                } 
+                }
             });
 
             // Update the inventoryList data in session storage
@@ -128,16 +128,15 @@ $(document).ready(function() {
         cancelTransaction();
         // change cart status to cancelled
         cancelCart();
-
     });
-    
+
 });
 
 function groupCartItems(cartData) {
     const groupedCart = [];
 
-    $.each(cartData, function(index, item) {
-        const existingItem = groupedCart.find(function(groupedItem) {
+    $.each(cartData, function (index, item) {
+        const existingItem = groupedCart.find(function (groupedItem) {
             return groupedItem.name === item.name;
         });
 

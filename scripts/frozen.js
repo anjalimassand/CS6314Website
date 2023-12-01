@@ -1,4 +1,4 @@
-$(document).ready(function() {
+/*$(document).ready(function() {
 
     // Update the path to the XML file
     const xmlFilePath = "xml/frozen.xml";
@@ -55,3 +55,4 @@ $(document).ready(function() {
         }
     });
 });
+*/
