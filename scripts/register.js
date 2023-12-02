@@ -86,6 +86,7 @@ function validateForm() {
     return true;
 }
 
+
 function clearMessages() {
     // Clear all error messages
     var errorMessages = ["8Message", "pwdMessage", "firstMessage", "lastMessage", "diffMessage", "bdayMessage", "phoneMessage", "emailMessage", "genderMessage", "addMessage"];
@@ -94,6 +95,7 @@ function clearMessages() {
         document.getElementById(errorMessages[i]).innerHTML = "";
     }
 }
+
 
 var myInterval = setInterval(formatDate, 1000);
 

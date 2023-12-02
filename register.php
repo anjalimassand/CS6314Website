@@ -52,7 +52,7 @@
                         Registered successfully! <a href="myaccount.php">Click to Login Now!</a>
                     </div>
 
-                    <form name="commentForm" class="login needs-validation" action="" method="post" onsubmit="return validateForm()" novalidate>
+                    <form name="commentForm" class="login needs-validation" action="" method="post" onsubmit="return validateForm(event)">
                         <div class="form-group">
                             <label for="username">Username:</label>
                             <input type="text" class="form-control" name="username" id="username" required>
@@ -109,16 +109,16 @@
                         </div>
 
                         <div class="invalid-feedback">
-                            <h6 id="8Message"></h6>
-                            <h6 id="pwdMessage"></h6>
-                            <h6 id="firstMessage"></h6>
-                            <h6 id="lastMessage"></h6>
-                            <h6 id="diffMessage"></h6>
-                            <h6 id="bdayMessage"></h6>
-                            <h6 id="phoneMessage"></h6>
-                            <h6 id="emailMessage"></h6>
-                            <h6 id="genderMessage"></h6>
-                            <h6 id="addMessage"></h6>
+                            <h6 id="8Message" style="display:none;"></h6>
+                            <h6 id="pwdMessage" style="display:none;"></h6>
+                            <h6 id="firstMessage" style="display:none;"></h6>
+                            <h6 id="lastMessage" style="display:none;"></h6>
+                            <h6 id="diffMessage" style="display:none;"></h6>
+                            <h6 id="bdayMessage" style="display:none;"></h6>
+                            <h6 id="phoneMessage" style="display:none;"></h6>
+                            <h6 id="emailMessage" style="display:none;"></h6>
+                            <h6 id="genderMessage" style="display:none;"></h6>
+                            <h6 id="addMessage" style="display:none;"></h6>
                         </div>
 
                         <button type="submit" class="btn btn-primary" style="background-color:rgb(51, 157, 192); margin-left:340pt;">Submit</button>

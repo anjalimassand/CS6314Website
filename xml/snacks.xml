@@ -18,7 +18,7 @@
     </product>
     <product>
         <name>Animal Crackers</name>
-        <quantity>8</quantity>
+        <quantity>7</quantity>
         <price>3.59</price>
         <imageSrc>images/crackers.png</imageSrc>
         <mainCat>Snacks</mainCat>
