@@ -95,7 +95,7 @@ if (isset($_SESSION['username'])) {
 
     <footer>
         <h4 id="date" style="padding-top: 20px"><script>formatDate();</script></h4>
-        <h6>Anjali Massand AJM180009</h6>
+        <h6>Anjali Massand AJM180009 & Aashritha Ananthula AXA180116</h6>
     </footer>
     <script src="scripts/inventoryItems.js"></script>
     <script src="scripts/cart.js"></script>
