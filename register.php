@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <script src="scripts/contactus.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopper's Stop: Contact Us</title>
@@ -41,7 +42,7 @@
 
     <div class="container">
         <div class="row">
-            
+
             <div class="col-md-6" style="background-color:lightgrey; margin-left:220pt">
                 <div>
 
@@ -52,7 +53,7 @@
                         Registered successfully! <a href="myaccount.php">Click to Login Now!</a>
                     </div>
 
-                    <form name="commentForm" class="login needs-validation" action="" method="post" onsubmit="return validateForm(event)">
+                    <form name="commentForm" class="login needs-validation" action="" method="post">
                         <div class="form-group">
                             <label for="username">Username:</label>
                             <input type="text" class="form-control" name="username" id="username" required>
@@ -60,22 +61,27 @@
 
                         <div class="form-group">
                             <label for="password">Password:</label>
-                            <input type="password" class="form-control" name="password" id="password" required>
+                            <input type="password" class="form-control" name="password" id="password" pattern=".{8,}"
+                                title="Password must be at least 8 characters." required>
                         </div>
 
                         <div class="form-group">
                             <label for="password2">Re-enter Password:</label>
-                            <input type="password" class="form-control" name="password2" id="password2" required>
+                            <input type="password" class="form-control" name="password2" id="password2" pattern=".{8,}"
+                                title="Password must be at least 8 characters." required>
+                            <small id="pwdMatchMessage" style="color: red;"></small>
                         </div>
 
                         <div class="form-group">
                             <label for="first">First Name:</label>
-                            <input type="text" class="form-control" name="first" id="first" required>
+                            <input type="text" class="form-control" name="first" id="first" pattern="[A-Za-z]+"
+                                title="First name must only contain letters." required>
                         </div>
 
                         <div class="form-group">
                             <label for="last">Last Name:</label>
-                            <input type="text" class="form-control" name="last" id="last" required>
+                            <input type="text" class="form-control" name="last" id="last" pattern="[A-Za-z]+"
+                                title="Last name must only contain letters." required>
                         </div>
 
                         <div class="form-group">
@@ -90,12 +96,16 @@
 
                         <div class="form-group">
                             <label for="number">Phone Number:</label>
-                            <input type="tel" class="form-control" name="number" id="number" placeholder="(012) 345-6789" required>
+                            <input type="tel" class="form-control" name="number" id="number"
+                                pattern="\(\d{3}\) \d{3}-\d{4}"
+                                title="Phone number must be formatted as (012) 345-6789." required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email Address:</label>
-                            <input type="email" class="form-control" name="email" id="email" required>
+                            <input type="email" class="form-control" name="email" id="email"
+                                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+                                title="Email must contain '@' and '.com'" required>
                         </div>
 
                         <div class="form-group">
@@ -108,7 +118,7 @@
                             <input type="text" class="form-control" name="zipcode" id="zipcode" required>
                         </div>
 
-                        <div class="invalid-feedback">
+                        <!-- <div class="invalid-feedback">
                             <h6 id="8Message" style="display:none;"></h6>
                             <h6 id="pwdMessage" style="display:none;"></h6>
                             <h6 id="firstMessage" style="display:none;"></h6>
@@ -119,12 +129,13 @@
                             <h6 id="emailMessage" style="display:none;"></h6>
                             <h6 id="genderMessage" style="display:none;"></h6>
                             <h6 id="addMessage" style="display:none;"></h6>
-                        </div>
+                        </div> -->
 
-                        <button type="submit" class="btn btn-primary" style="background-color:rgb(51, 157, 192); margin-left:340pt;">Submit</button>
+                        <button type="submit" class="btn btn-primary"
+                            style="background-color:rgb(51, 157, 192); margin-left:340pt;">Submit</button>
                     </form>
 
-                    
+
 
                     <?php
                     include 'config.php';
@@ -133,19 +144,17 @@
                     $username = "root";
                     $password = "";
                     $dbname = "groceryData";
-
                     // Create connection
                     $conn = new mysqli($servername, $username, $password, $dbname);
-
                     // Check connection
                     if ($conn->connect_error) {
-                        die("Connection failed: " . $conn->connect_error);
+                    die("Connection failed: " . $conn->connect_error);
                     }
                     */
                     if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         // Get user input from the form
-                        $username = $_POST['username']; 
-                        $password = $_POST['password']; 
+                        $username = $_POST['username'];
+                        $password = $_POST['password'];
                         $firstName = $_POST['first'];
                         $lastName = $_POST['last'];
                         $age = $_POST['age'];
@@ -153,7 +162,7 @@
                         $email = $_POST['email'];
                         $address = $_POST['address'];
                         $zipcode = $_POST['zipcode'];
-                    
+
                         // SQL statement to insert data into the Users table
                         $sql = "INSERT INTO Users (UserName, Password)
                                 VALUES ('$username', '$password')";
@@ -170,14 +179,14 @@
                             if ($conn->query($sql2) === TRUE) {
                                 echo '<script>displaySuccessMessage();</script>';
                             } else {
-                                echo "Error: " . $sql2 . "<br>" ;
+                                echo "Error: " . $sql2 . "<br>";
                             }
                         } else {
                             echo "Error: " . $sql . "<br>";
                         }
                     }
-                    
-                    $conn->close();  
+
+                    $conn->close();
                     ?>
                 </div>
             </div>
@@ -190,8 +199,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
     <footer>
-        <h4 id="date" style="padding-top: 20px"><script>formatDate();</script></h4>
-        <h6>Anjali Massand AJM180009</h6>
+        <h4 id="date" style="padding-top: 20px">
+            <script>formatDate();</script>
+        </h4>
+        <h6>Anjali Massand AJM180009 & Aashritha Ananthula AXA180116</h6>
     </footer>
 
 </body>
