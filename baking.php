@@ -5,10 +5,6 @@ if (isset($_SESSION['username'])) {
     echo "Hello, ", $_SESSION['username'];
 }
 
-if (isset($_SESSION['CustomerID'])) {
-    echo "Hello, ", $_SESSION['CustomerID'];
-}
-
 ?>
 <!DOCTYPE html>
 <html>

@@ -10,7 +10,7 @@ if (isset($_SESSION['username'])) {
 
 <head>
     
-    <title>Shopper's Stop: Frozen</title>
+    <title>Shopper's Stop: Breakfast & Cereal</title>
     <header>
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script src="scripts/contactus.js"></script>
