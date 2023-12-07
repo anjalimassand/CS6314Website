@@ -12,6 +12,7 @@ if (isset($_SESSION['username'])) {
 
 <head>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="scripts/displayCart.js"></script>
     <script src="scripts/contactus.js"></script>
     <title>Shopper's Stop: Shopping Cart</title>
     <header>
@@ -69,7 +70,7 @@ if (isset($_SESSION['username'])) {
                 ?>
 
 
-                <table id="cartTable" style="width:100%">
+                <table id="cartTable" style="width:100%; display:none;">
                     <thead>
                         <tr>
                             <th style="text-align:left">Item</th>

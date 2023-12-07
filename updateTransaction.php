@@ -7,7 +7,7 @@ $transactionStatus = 'In Cart';
 
 $transactionDate = date('Y-m-d H:i:s'); // Current date and time
 
-// Calculate the total price from the items in the cart (adjust this based on your data structure)
+// Calculate the total price from the items in the cart
 $totalPrice = 0;
 
 $requestData = json_decode(file_get_contents("php://input"), true);
@@ -36,7 +36,6 @@ VALUES ('$transactionStatus', '$transactionDate', $totalPrice, $customerID)";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Assuming there is at least one row, fetch the result
         $row = $result->fetch_assoc();
         $transactionID = $row["TransactionID"];
 
@@ -51,13 +50,10 @@ VALUES ('$transactionStatus', '$transactionDate', $totalPrice, $customerID)";
 } else {
     $customerID = $_SESSION['CustomerID'];
    
-
-    // SQL query to get TransactionID based on CustomerID and TransactionStatus
     $sql = "SELECT TransactionID FROM Transactions WHERE CustomerID = '$customerID' AND TransactionStatus = '$transactionStatus' LIMIT 1";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        // Assuming there is at least one row, fetch the result
         $row = $result->fetch_assoc();
         $transactionID = $row["TransactionID"];
 
@@ -81,7 +77,6 @@ VALUES ('$transactionStatus', '$transactionDate', $totalPrice, $customerID)";
     $result = $conn->query($sqlSelectTotalPrice);
 
     if ($result->num_rows > 0) {
-        // Assuming that each combination of TransactionID and CustomerID is unique
         $row = $result->fetch_assoc();
         $existingTotalPrice = $row["TotalPrice"];
 
@@ -89,7 +84,7 @@ VALUES ('$transactionStatus', '$transactionDate', $totalPrice, $customerID)";
     } else {
         echo "No matching entry found in the Transactions table.";
     }
-    // Calculate the new total price (adjust this based on your data structure)
+    // Calculate the new total price
     $newTotalPrice = $existingTotalPrice + $totalPrice;
 
     // Update the TotalPrice in the Transactions table
@@ -106,7 +101,5 @@ VALUES ('$transactionStatus', '$transactionDate', $totalPrice, $customerID)";
 
 }
 
-
-// Close the database connection
 $conn->close();
 ?>

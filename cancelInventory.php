@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'config.php'; // Include your database configuration file
+include 'config.php'; 
 
 // Sanitize and validate data
 $customerID = $_SESSION['CustomerID'];

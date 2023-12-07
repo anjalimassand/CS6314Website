@@ -5,6 +5,10 @@ if (isset($_SESSION['username'])) {
     echo "Hello, ", $_SESSION['username'];
 }
 
+if (isset($_SESSION['TransactionID'])) {
+    echo "Hello, ", $_SESSION['TransactionID'];
+}
+
 ?>
 <!DOCTYPE html>
 <html>

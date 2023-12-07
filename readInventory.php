@@ -1,15 +1,12 @@
 <?php
-// process_upload.php
 
 $servername = "127.0.0.1";
 $username = "root";
 $password = "";
 $dbname = "groceryData";
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
@@ -31,8 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Move the uploaded file to the specified directory
         $targetFilePath = $uploadDirectory . basename($file["name"]);
         move_uploaded_file($file["tmp_name"], $targetFilePath);
-
-        // Now, you can include your existing logic to read and process the file content
 
         // Determine the file type based on the extension
         $fileExtension = pathinfo($targetFilePath, PATHINFO_EXTENSION);
@@ -100,13 +95,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 break;
         }
 
-        // Clean up: Delete the uploaded file if needed
         unlink($targetFilePath);
     } else {
         echo "No file uploaded.";
     }
 }
 
-// Close the database connection
 $conn->close();
 ?>

@@ -1,11 +1,10 @@
 <?php
-include 'config.php'; // Include your database configuration file
+include 'config.php';
 
 if(!isset($_SESSION['TransactionID'])){
     return;
 }
 
-// Sanitize and validate data
 $customerID = $_SESSION['CustomerID'];
 $transactionID = $_SESSION['TransactionID'];
 
@@ -33,6 +32,7 @@ if ($resultSelectCartItems->num_rows > 0) {
             <th>Transaction Status</th>
             <th>Transaction Date</th>
             <th>Total Price</th>
+            <th>Action</th>
         </tr>";
 
     // Loop through the results and display information for each item in the cart
@@ -49,6 +49,7 @@ if ($resultSelectCartItems->num_rows > 0) {
             <td>{$row['TransactionStatus']}</td>
             <td>{$row['TransactionDate']}</td>
             <td>{$row['TotalPrice']}</td>
+            <td><button class='deleteButton' data-cartid='{$row['CartID']}' data-itemname='{$row['Name']}'>Delete</button></td>
         </tr>";
     }
 
@@ -57,6 +58,5 @@ if ($resultSelectCartItems->num_rows > 0) {
     echo "No items found in the cart.";
 }
 
-// Close the database connection
 $conn->close();
 ?>

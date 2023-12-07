@@ -1,10 +1,8 @@
 <?php
 session_start();
 
-// Include your database configuration file (config.php or similar)
 include 'config.php';
 
-// Sanitize and validate data
 $customerID = $_SESSION['CustomerID'];
 $transactionID = $_SESSION['TransactionID'];
 
@@ -17,6 +15,5 @@ if ($conn->query($sql) === TRUE) {
     echo "Error cancelling cart entries: ";
 }
 
-// Close the database connection
 $conn->close();
 ?>

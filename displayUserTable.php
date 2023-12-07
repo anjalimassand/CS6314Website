@@ -44,7 +44,7 @@ function displayTransactionsAndItems($conn, $customerID)
     if ($result->num_rows > 0) {
         // Display the data in a table
         echo "<table border='1'>";
-        echo "<tr><th>Transaction ID</th><th>Status</th><th>Item Number</th><th>Item Name</th><th>Action</th></tr>";
+        echo "<tr><th>Transaction ID</th><th>Status</th><th>Item Number</th><th>Item Name</th></tr>";
 
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
@@ -53,12 +53,6 @@ function displayTransactionsAndItems($conn, $customerID)
             echo "<td>" . $row['ItemNumber'] . "</td>";
             echo "<td>" . $row['Name'] . "</td>";
 
-            // Add a delete button if the status is "in cart"
-            if ($row['TransactionStatus'] === "In Cart") {
-                echo "<td><button onclick='deleteItem(" . $row['ItemNumber'] . ")'>Delete</button></td>";
-            } else {
-                echo "<td></td>"; // Empty column if the status is not "in cart"
-            }
 
             echo "</tr>";
         }
@@ -113,7 +107,5 @@ echo "<h2>Last Transaction and Items</h2>";
 displayTransactionsAndItems($conn, $customerID);
 
 
-
-// Close the database connection
 $conn->close();
 ?>

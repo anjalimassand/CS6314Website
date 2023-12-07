@@ -1,14 +1,12 @@
 <?php
 include 'config.php';
-session_start(); // Start the session
+session_start(); 
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate the username and password (you may want to enhance this part)
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Example validation - Replace this with your authentication logic
     if ($username == "admin" && $password == "admin123") {
         // Set session variables
         $_SESSION["username"] = $username;
@@ -17,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: myaccount.php");
         exit();
     } else {
-        // Example validation - Replace this with your authentication logic
+        // Example validation
         $sql = "SELECT CustomerID FROM Users WHERE UserName = '$username' AND Password = '$password' LIMIT 1";
         $result = $conn->query($sql);
 
@@ -34,7 +32,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $result = $conn->query($sql);
 
             if ($result->num_rows > 0) {
-                // Assuming that each username is unique, so there should be only one row
                 $row = $result->fetch_assoc();
                 $customerID = $row["CustomerID"];
 

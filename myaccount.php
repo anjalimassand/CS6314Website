@@ -80,7 +80,6 @@ if (isset($_SESSION['username'])) {
                         $result = $conn->query($sql);
 
                         if ($result->num_rows > 0) {
-                            // Display the inventory table content in a table or format of your choice
                             echo "<h2>All Inventory:</h2>";
                             echo "<table border='1'>";
                             echo "<tr><th>Item Number</th><th>Name</th><th>Category</th><th>Subcategory</th><th>Unit Price</th><th>Quantity in Inventory</th><th>Image Source</th></tr>";
@@ -105,10 +104,10 @@ if (isset($_SESSION['username'])) {
 
                         // Execute the query
                         $result = $conn->query($sql);
-
+                        echo "<h2>Items Low in Inventory:</h2>";
                         // Check if there are rows in the result set
                         if ($result->num_rows > 0) {
-                            echo "<h2>Items Low in Inventory:</h2>";
+                            
                             echo "<table border='1'>";
                             echo "<tr><th>Item Number</th><th>Name</th><th>Category</th><th>Subcategory</th><th>Unit Price</th><th>Quantity in Inventory</th><th>Image Source</th></tr>";
 
@@ -133,6 +132,7 @@ if (isset($_SESSION['username'])) {
                         }
 
                         // Form to input specific date
+                        echo '<h2> Input Date </h2>';
                         echo '<form method="post" action="' . $_SERVER['PHP_SELF'] . '">';
                         echo '    <label for="selectedDate">Enter Specific Date:</label>';
                         echo '    <input type="date" id="selectedDate" name="selectedDate" required>';
@@ -141,10 +141,13 @@ if (isset($_SESSION['username'])) {
 
                         if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             // Retrieve user input from the form
-                            $selectedDate = $_POST['selectedDate'];
-                        
-                            // SQL query to retrieve customers with more than 2 transactions on the selected date
-                            $sql = "SELECT
+                            if (isset($_POST['selectedDate'])) {
+
+
+                                $selectedDate = $_POST['selectedDate'];
+
+                                // SQL query to retrieve customers with more than 2 transactions on the selected date
+                                $sql = "SELECT
                                         c.CustomerID,
                                         c.FirstName,
                                         c.LastName,
@@ -159,63 +162,64 @@ if (isset($_SESSION['username'])) {
                                         c.CustomerID
                                     HAVING
                                         TransactionCount > 2";
-                        
-                            $result = $conn->query($sql);
 
-                            if (isset($result) && $result->num_rows > 0) {
-                                echo '<h2>Customers with More Than 2 Transactions on ' . $selectedDate . '</h2>';
-                                echo '<table>';
-                                echo '<tr>';
-                                echo '<th>CustomerID</th>';
-                                echo '<th>Name</th>';
-                                echo '<th>Transaction Count</th>';
-                                echo '</tr>';
-                            
-                                while ($row = $result->fetch_assoc()) {
+                                $result = $conn->query($sql);
+
+                                if (isset($result) && $result->num_rows > 0) {
+                                    echo '<h2>Customers with More Than 2 Transactions on ' . $selectedDate . '</h2>';
+                                    echo '<table>';
                                     echo '<tr>';
-                                    echo '<td>' . $row['CustomerID'] . '</td>';
-                                    echo '<td>' . $row['FirstName'] . ' ' . $row['LastName'] . '</td>';
-                                    echo '<td>' . $row['TransactionCount'] . '</td>';
+                                    echo '<th>CustomerID</th>';
+                                    echo '<th>Name</th>';
+                                    echo '<th>Transaction Count</th>';
                                     echo '</tr>';
+
+                                    while ($row = $result->fetch_assoc()) {
+                                        echo '<tr>';
+                                        echo '<td>' . $row['CustomerID'] . '</td>';
+                                        echo '<td>' . $row['FirstName'] . ' ' . $row['LastName'] . '</td>';
+                                        echo '<td>' . $row['TransactionCount'] . '</td>';
+                                        echo '</tr>';
+                                    }
+
+                                    echo '</table>';
+                                } elseif (isset($result)) {
+                                    echo '<p>No results found for the selected date.</p>';
                                 }
-                            
-                                echo '</table>';
-                            } elseif (isset($result)) {
-                                echo '<p>No results found for the selected date.</p>';
                             }
                         }
 
-                     //   echo '<h2>Admin Customer List</h2>';
+                        //   echo '<h2>Admin Customer List</h2>';
                         // Initialize variables for user input
                         $itemNumber = "";
                         $newUnitPrice = "";
                         $newQuantity = "";
 
                         // echo "<h2>Update Inventory Item:</h2>";
-
+                
                         // echo '<form method="post" action="">';
                         // echo '    Enter Item Number: <input type="text" name="itemNumber" value="' . htmlspecialchars($itemNumber) . '" required>';
                         // echo '    Enter New Unit Price: <input type="text" name="newUnitPrice" value="' . htmlspecialchars($newUnitPrice) . '" required>';
                         // echo '    Enter New Quantity: <input type="text" name="newQuantity" value="' . htmlspecialchars($newQuantity) . '" required>';
                         // echo '    <input type="submit" value="Update Item">';
                         // echo '</form>';
-
+                
                         // // Check if the form is submitted
                         // if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+                
                         //     if (isset($_POST["itemNumber"], $_POST["newUnitPrice"], $_POST["newQuantity"])) {
                         //         // Get the user input
                         //         $itemNumber = $_POST["itemNumber"];
                         //         $newUnitPrice = $_POST["newUnitPrice"];
                         //         $newQuantity = $_POST["newQuantity"];
-
+                
                         //         // Validate the input (you may want to enhance this part)
                         //         if (!empty($itemNumber) && is_numeric($newUnitPrice) && is_numeric($newQuantity)) {
                         //             // SQL query to update the unit price and quantity in inventory
                         //             $sql = "UPDATE Inventory
                         //         SET UnitPrice = '$newUnitPrice', QuantityInInventory = '$newQuantity'
                         //         WHERE ItemNumber = '$itemNumber'";
-
+                
                         //             // Execute the query
                         //             if ($conn->query($sql) === TRUE) {
                         //                 echo '<p style="color: green;">Item updated successfully!</p>';
@@ -226,9 +230,9 @@ if (isset($_SESSION['username'])) {
                         //             echo '<p style="color: red;">Invalid input. Please enter valid values for item number, unit price, and quantity.</p>';
                         //         }
                         //     }
-
+                
                         // }
-
+                
                         echo '<h2>Enter Zipcode and Month</h2>';
                         echo '<form action="' . $_SERVER['PHP_SELF'] . '" method="post">';
                         echo '    <label for="zipCode">Enter Zip Code:</label>';
@@ -247,7 +251,6 @@ if (isset($_SESSION['username'])) {
                                 $specifiedZipCode = $_POST['zipCode'];
                                 $specifiedMonth = $_POST['month'];
 
-                                // SQL query
                                 $sql = "SELECT
                                 c.CustomerID,
                                 c.FirstName,
@@ -346,7 +349,7 @@ if (isset($_SESSION['username'])) {
                             TransactionCount > 3";
 
                         $result = $conn->query($sql);
-
+                        echo '<h2>Customers Older Than 20 with More Than 3 Transactions</h2>';
                         if ($result->num_rows > 0) {
                             echo '<h2>Customers Older Than 20 with More Than 3 Transactions</h2>';
                             echo '<table>';
@@ -371,7 +374,7 @@ if (isset($_SESSION['username'])) {
                             echo 'No customers found.';
                         }
 
-                
+
                     } else {
                         include 'displayUserTable.php';
                         echo '<p></p>';
@@ -441,7 +444,6 @@ if (isset($_SESSION['username'])) {
                 </form> -->
 
                 <script>
-                    // JavaScript function to show/hide input based on filter type
                     function showInput() {
                         var filterType = document.getElementById("filterType").value;
                         var monthInput = document.getElementById("monthInput");

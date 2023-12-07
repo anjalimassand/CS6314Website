@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopper's Stop: Contact Us</title>
 
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <script src="scripts/register.js"></script>
@@ -48,7 +47,6 @@
 
                     <h3>Create Account</h3>
 
-                    <!-- Bootstrap alert for success message -->
                     <div id="successMessage" class="alert alert-success mt-3" role="alert" style="display: none;">
                         Registered successfully! <a href="myaccount.php">Click to Login Now!</a>
                     </div>
@@ -163,7 +161,6 @@
                         $address = $_POST['address'];
                         $zipcode = $_POST['zipcode'];
 
-                        // SQL statement to insert data into the Users table
                         $sql = "INSERT INTO Users (UserName, Password)
                                 VALUES ('$username', '$password')";
 
@@ -193,7 +190,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

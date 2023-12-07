@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
     <product>
-        <name>Frozen Pancakes</name>
+        <name>Pancakes</name>
         <quantity>10</quantity>
         <price>5.99</price>
         <imageSrc>images/frozenpancakes.webp</imageSrc>
@@ -17,7 +17,7 @@
         <category>meals-breakfast</category>
     </product>
     <product>
-        <name>Breakfast Burritos</name>
+        <name>Burritos</name>
         <quantity>10</quantity>
         <price>1.25</price>
         <imageSrc>images/burrito.png</imageSrc>
