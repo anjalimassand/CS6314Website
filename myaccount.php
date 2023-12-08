@@ -351,7 +351,7 @@ if (isset($_SESSION['username'])) {
                         $result = $conn->query($sql);
                         echo '<h2>Customers Older Than 20 with More Than 3 Transactions</h2>';
                         if ($result->num_rows > 0) {
-                            echo '<h2>Customers Older Than 20 with More Than 3 Transactions</h2>';
+                          //  echo '<h2>Customers Older Than 20 with More Than 3 Transactions</h2>';
                             echo '<table>';
                             echo '<tr>';
                             echo '<th>CustomerID</th>';
