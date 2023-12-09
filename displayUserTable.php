@@ -44,7 +44,7 @@ function displayTransactionsAndItems($conn, $customerID)
     if ($result->num_rows > 0) {
         // Display the data in a table
         echo "<table border='1'>";
-        echo "<tr><th>Transaction ID</th><th>Status</th><th>Item Number</th><th>Item Name</th></tr>";
+        echo "<tr><th>Transaction ID</th><th>Transaction Status</th><th>Item Number</th><th>Item Name</th></tr>";
 
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
@@ -83,7 +83,7 @@ function displayFilteredTransactions($conn, $customerID, $filterCondition)
     if ($result->num_rows > 0) {
         // Display the data in a table
         echo "<table border='1'>";
-        echo "<tr><th>Transaction ID</th><th>Status</th><th>Item Number</th><th>Item Name</th></tr>";
+        echo "<tr><th>Transaction ID</th><th>Transaction Status</th><th>Item Number</th><th>Item Name</th></tr>";
 
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";

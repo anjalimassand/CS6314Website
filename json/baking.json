@@ -1,7 +1,7 @@
 [
     {
         "name": "Pumpkin Mix",
-        "quantity": 9,
+        "quantity": 8,
         "price": 3.99,
         "imageSrc": "images\/pumpkinmix.png",
         "mainCat": "Baking",
@@ -11,7 +11,7 @@
     },
     {
         "name": "Pie Crust",
-        "quantity": 8,
+        "quantity": 7,
         "price": 3.49,
         "imageSrc": "images\/crust.png",
         "mainCat": "Baking",
@@ -21,7 +21,7 @@
     },
     {
         "name": "Pie Crusts",
-        "quantity": 9,
+        "quantity": 8,
         "price": 5.29,
         "imageSrc": "images\/crust2.png",
         "mainCat": "Baking",

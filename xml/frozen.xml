@@ -2,7 +2,7 @@
 <products>
     <product>
         <name>Pancakes</name>
-        <quantity>10</quantity>
+        <quantity>9</quantity>
         <price>5.99</price>
         <imageSrc>images/frozenpancakes.webp</imageSrc>
         <mainCat>Frozen</mainCat>
@@ -10,7 +10,7 @@
     </product>
     <product>
         <name>Waffles</name>
-        <quantity>10</quantity>
+        <quantity>9</quantity>
         <price>4.29</price>
         <imageSrc>images/waffles.png</imageSrc>
         <mainCat>Frozen</mainCat>

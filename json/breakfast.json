@@ -1,7 +1,7 @@
 [
     {
         "name": "Cheerios Cereal",
-        "quantity": 5,
+        "quantity": 4,
         "price": 4.99,
         "imageSrc": "images\/cheerios.jpeg",
         "mainCat": "Breakfast",

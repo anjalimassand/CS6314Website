@@ -18,7 +18,7 @@
     </product>
     <product>
         <name>Jolly Rancher</name>
-        <quantity>5</quantity>
+        <quantity>4</quantity>
         <price>3.49</price>
         <imageSrc>images/jollyrancher.png</imageSrc>
         <mainCat>Candy</mainCat>
@@ -26,7 +26,7 @@
     </product>
     <product>
         <name>Nerds</name>
-        <quantity>6</quantity>
+        <quantity>4</quantity>
         <price>1.25</price>
         <imageSrc>images/nerds.png</imageSrc>
         <mainCat>Candy</mainCat>
